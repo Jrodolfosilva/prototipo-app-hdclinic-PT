@@ -272,6 +272,20 @@
   .proc-image.cover, .read-image.cover, .read-hero.cover, .read-inline.cover, .image.cover { width: 100%; }
   .read-image.cover { height: 140px; flex-shrink: 0; }
   .highlight-image.cover { height: auto; align-self: stretch; }
+
+  /* Profundidade: fundo cinza suave e cards brancos com sombra leve */
+  .phone, .sheet { background: #F6F6F6; }
+  .phone-black { background-color: #050505; }
+  .highlight, .read-card, .empty, .stat, .testimonial, .appt, .options {
+    border: 0;
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+  }
+  .highlight, .read-card, .empty, .stat, .testimonial, .options { border-radius: 16px; }
+  .appt { padding: 12px; border-radius: 16px; }
+  .options { padding: 0 12px; }
+  .read-row { margin: -8px 0; padding: 8px 16px 8px 0; }
+  .line { background: #E4E4E4; }
 </style>
 </head>
 <body>
