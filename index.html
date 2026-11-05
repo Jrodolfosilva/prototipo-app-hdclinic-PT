@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HD Clinic App</title>
+<title>HD Clinic App V2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: #F2F2F2; color: #2E2E2E; font-family: Manrope, sans-serif; padding: 32px 24px; }
@@ -16,7 +16,7 @@
   .flow-sub { font-size: 16px; line-height: 24px; font-weight: 600; color: #6B6B6B; margin-bottom: 12px; }
 
   .flow { display: flex; gap: 32px; overflow-x: auto; padding: 4px 4px 16px; margin-bottom: 32px; zoom: .7; }
-  .step { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; width: 390px; }
+  .step { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; width: 426px; }
   .step-name { font-size: 18px; line-height: 26px; font-weight: 600; }
 
   /* Telas em tamanho real: 390 x 844 */
@@ -37,7 +37,7 @@
   .link { display: flex; align-items: center; justify-content: center; height: 48px; flex-shrink: 0; font-size: 16px; font-weight: 600; }
   .box { display: flex; align-items: center; justify-content: center; background: #E8E8E8; border-radius: 12px; font-size: 14px; color: #6B6B6B; }
   .logo { width: 120px; height: 88px; }
-  .image { width: 100%; height: 320px; }
+  .image { width: 100%; height: 280px; }
   .ok { width: 80px; height: 80px; border-radius: 999px; }
   .check { display: flex; flex-direction: row; gap: 12px; }
   .check-box { width: 24px; height: 24px; flex-shrink: 0; border: 2px solid #A8A8A8; border-radius: 4px; }
@@ -119,22 +119,208 @@
   .read-hero { height: 220px; flex-shrink: 0; border-radius: 0; }
   .read-inline { height: 180px; flex-shrink: 0; }
   .text-center { text-align: center; }
+
+  /* V2: topo escuro e conteúdo em folha branca, como Login Version 7. Cores: marca HD Clinic */
+  .phone { padding: 0; gap: 0; border: 1px solid #2E2E2E; background: #FFFFFF; color: #2E2E2E; }
+  .phone-black, .top-dark, .dash-header, .top-flush {
+    background-color: #050505;
+    background-image: radial-gradient(ellipse 110% 100% at 72% 0%, rgba(255, 255, 255, .16), transparent 72%);
+  }
+  .phone-black { padding: 47px 16px 34px; background-size: 100% 300px; background-repeat: no-repeat; }
+  .top-dark { display: flex; flex-direction: column; gap: 16px; flex-shrink: 0; padding: 47px 16px 116px; }
+  .sheet { display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 16px; margin-top: -40px; padding: 40px 24px 34px; border-radius: 40px 40px 0 0; background: #FFFFFF; }
+  .top-dark .h, .top-dark .label, .bar-title, .dash-name { color: #FAFAFA; }
+  .top-dark .t, .top-dark .t-sm { color: #A8A8A8; }
+  .t, .t-sm { color: #6B6B6B; }
+  .bar { height: 40px; }
+  .phone .lucide { width: 24px; height: 24px; flex-shrink: 0; }
+  .arrow { display: flex; align-items: center; color: #FAFAFA; }
+  .logo-center { width: 120px; height: 88px; align-self: center; }
+  .logo-bar-img { width: 116px; height: 28px; align-self: center; }
+  .input { background: #FFFFFF; border: 1px solid #E8E8E8; color: #6B6B6B; }
+  .btn { background: #2E2E2E; color: #FFFFFF; font-weight: 800; }
+  .btn-line { background: #FFFFFF; color: #2E2E2E; border: 1px solid #2E2E2E; }
+  .link { color: #2E2E2E; }
+  .forgot { color: #2E2E2E; text-align: center; text-decoration: underline; }
+  .gold-link { color: #C9A546; font-weight: 600; }
+  .check-box { border-color: #6B6B6B; }
+  .seg { background: #2E2E2E; }
+  .seg-on { background: #C9A546; }
+  .dot { background: #E8E8E8; }
+  .dot-on { background: #7D6219; }
+  .line { background: #E8E8E8; }
+  .ok-gold { display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 999px; background: linear-gradient(90deg, #FCF6A5, #C9A546 45%, #C1983D); color: #050505; }
+  .icon { display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F5F5F5; color: #7D6219; }
+  .body-small { gap: 16px; }
+  .head-center { display: flex; flex-direction: column; gap: 8px; }
+  .field-group { display: flex; flex-direction: column; border: 1px solid #E8E8E8; border-radius: 12px; background: #FFFFFF; overflow: hidden; }
+  .group-row { display: flex; flex-direction: row; align-items: center; gap: 12px; height: 56px; padding: 0 16px; color: #6B6B6B; font-size: 18px; }
+  .group-row + .group-row { border-top: 1px solid #E8E8E8; }
+  .group-row .lucide:first-child { color: #7D6219; }
+  .or { display: flex; flex-direction: row; align-items: center; gap: 12px; flex-shrink: 0; }
+  .or-line { flex: 1; height: 1px; background: #E8E8E8; }
+  .btn-social { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 12px; height: 52px; flex-shrink: 0; border: 1px solid #E8E8E8; border-radius: 12px; background: #FFFFFF; color: #2E2E2E; font-size: 16px; font-weight: 600; }
+  .btn-social-half { flex: 1; }
+  .social-logo { width: 24px; height: 24px; flex-shrink: 0; }
+  .head-icon { display: flex; align-items: center; justify-content: center; color: #FAFAFA; background: transparent; }
+  .avatar { background: #2E2E2E; color: #FAFAFA; }
+  .highlight, .read-card, .empty { background: #FFFFFF; border: 1px solid #E8E8E8; }
+  .read-image { border: 0; }
+  .date-box { background: #F5F5F5; }
+  .date-month { color: #7D6219; }
+  .date-day { color: #2E2E2E; }
+  .chevron { display: flex; align-items: center; color: #6B6B6B; }
+  .bottom-bar { background: #050505; border-top: 0; }
+  .bar-item { color: #A8A8A8; }
+  .bar-item-on { color: #C9A546; }
+  .bar-plus { background: linear-gradient(90deg, #FCF6A5, #C9A546 45%, #C1983D); color: #050505; }
+  .cal-head { color: #6B6B6B; }
+  .cal-off { color: #A8A8A8; }
+  .cal-on { background: #C9A546; color: #050505; }
+  .slot { background: #FFFFFF; border: 1px solid #E8E8E8; color: #2E2E2E; }
+  .slot-on { background: #C9A546; border-color: #C9A546; color: #050505; }
+  .read-hero { border-radius: 0; }
+  .top-flush { padding: 47px 16px 16px; }
+  /* ENT-01: estilo próprio, topo preto com base em meia-lua */
+  .welcome-top {
+    display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 16px;
+    padding: 47px 16px 72px;
+    border-radius: 0 0 50% 50% / 0 0 64px 64px;
+    background-color: #050505;
+    background-image: radial-gradient(ellipse 110% 40% at 72% 0%, rgba(255, 255, 255, .16), transparent 72%);
+  }
+  .phrase { font-size: 20px; line-height: 28px; font-weight: 400; color: #FAFAFA; }
+  .welcome-top .box { background: #161616; border: 1px solid #2E2E2E; color: #A8A8A8; }
+  .welcome-top .dot { background: #2E2E2E; }
+  .welcome-top .dot-on { background: #C9A546; }
+  .welcome-bottom { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; padding: 24px 16px 34px; }
+  /* Mockup: iPhone 15 Pro de gr.svg. Ecrã útil 390 x 840 */
+  .device { position: relative; width: 426px; height: 870px; flex-shrink: 0; }
+  .device-frame { position: absolute; top: 0; left: 0; width: 426px; height: 870px; }
+  .phone { position: absolute; top: 15px; left: 18px; width: 390px; height: 840px; border: 0; border-radius: 52px; }
+  .island { position: absolute; top: 28px; left: 151px; width: 124px; height: 36px; border-radius: 999px; background: #000000; z-index: 2; }
+  .status { position: absolute; top: 28px; left: 18px; width: 390px; height: 36px; display: flex; align-items: center; justify-content: space-between; padding: 0 30px 0 40px; color: #FFFFFF; font-size: 15px; font-weight: 700; z-index: 2; }
+  .status-icons { display: flex; flex-direction: row; align-items: center; gap: 4px; }
+  .status .lucide { width: 18px; height: 18px; }
+  .home-bar { position: absolute; left: 146px; bottom: 23px; width: 134px; height: 5px; border-radius: 999px; background: #2E2E2E; z-index: 2; }
+  .home-bar-light { background: #FAFAFA; }
+
+  /* Títulos menores dentro do ecrã */
+  .h { font-size: 26px; line-height: 32px; }
+  .section-title { font-size: 18px; line-height: 24px; }
+  .bar-title { font-size: 18px; line-height: 24px; }
+  .dash-name { font-size: 20px; line-height: 26px; }
+
+  /* Afasta o conteúdo da ilha do iPhone */
+  .top-dark { padding-top: 56px; }
+  .top-flush { padding-top: 56px; }
+  .welcome-top { padding-top: 62px; }
+  .welcome-top .image { height: 256px; }
+
+  /* REG-01: lista de etapas */
+  .item { align-items: center; }
+  .icon { width: 44px; height: 44px; border-radius: 1000px; }
+  .icon .lucide { width: 20px; height: 20px; }
+  .item .label { font-size: 18px; line-height: 24px; font-weight: 700; }
+  .item .t { font-size: 15px; line-height: 20px; }
+
+  .dash-user { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+  .dash-hello { font-size: 14px; line-height: 20px; font-weight: 400; color: #FAFAFA; }
+
+  /* Módulos Agenda, Novidades e Perfil: reaproveitam a dashboard */
+  .dash-title { flex: 1; font-size: 26px; line-height: 32px; }
+  .read-list { display: flex; flex-direction: column; gap: 16px; }
+  .read-card-full { width: 100%; }
+
+  /* AGE-01: seleção de procedimento */
+  .chips { display: flex; flex-direction: row; gap: 8px; overflow-x: auto; flex-shrink: 0; margin-right: -24px; scrollbar-width: none; }
+  .chip { display: flex; align-items: center; height: 40px; padding: 0 16px; flex-shrink: 0; border: 1px solid #E8E8E8; border-radius: 999px; font-size: 15px; font-weight: 600; color: #2E2E2E; }
+  .chip-on { background: #2E2E2E; border-color: #2E2E2E; color: #FFFFFF; }
+  .options { display: flex; flex-direction: column; }
+  .option { display: flex; flex-direction: row; align-items: center; gap: 12px; height: 52px; border-bottom: 1px solid #E8E8E8; }
+  .option:last-child { border-bottom: 0; }
+  .radio { display: flex; width: 22px; height: 22px; flex-shrink: 0; border: 2px solid #A8A8A8; border-radius: 999px; }
+  .radio-on { border: 7px solid #2E2E2E; }
+
+  /* DET-02: conteúdo com scroll dentro da folha branca */
+  .sheet-scroll { overflow-y: auto; scrollbar-width: none; }
+  .sheet-scroll .body { flex: none; }
+
+  /* Oculto por enquanto: login social */
+  .oculto { display: none !important; }
+
+  /* Catálogo, procedimento e pacote */
+  .proc-card { width: 160px; }
+  .proc-image { height: 112px; flex-shrink: 0; border: 0; border-radius: 0; }
+  .thumb { width: 64px; height: 64px; flex-shrink: 0; font-size: 12px; }
+  .stats { display: flex; flex-direction: row; gap: 12px; }
+  .stat { display: flex; flex-direction: column; flex: 1; gap: 2px; padding: 12px; border: 1px solid #E8E8E8; border-radius: 12px; }
+  .testimonial { display: flex; flex-direction: column; gap: 8px; padding: 12px; border: 1px solid #E8E8E8; border-radius: 12px; }
+  .meta-check { display: flex; flex-direction: row; align-items: center; gap: 8px; color: #7D6219; }
+  .meta-check .lucide { width: 20px; height: 20px; }
+  .fixed-cta { flex-shrink: 0; padding: 12px 16px 34px; border-top: 1px solid #E8E8E8; background: #FFFFFF; }
+  .fail { display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 999px; background: #B3261E; color: #FFFFFF; }
+  .btn-danger-solid { background: #B3261E; color: #FFFFFF; }
+
+  /* VIT-01: mesma secção de Procedimentos, em duas colunas */
+  .vita-grid { display: flex; flex-direction: row; flex-wrap: wrap; gap: 12px; }
+  .vita-card { width: calc(50% - 6px); color: inherit; text-decoration: none; }
+
+  /* Imagens de modelo */
+  .cover { display: block; object-fit: cover; }
+  .box.cover { border: 0; }
+  .proc-image.cover, .read-image.cover, .read-hero.cover, .read-inline.cover, .image.cover { width: 100%; }
+  .read-image.cover { height: 140px; flex-shrink: 0; }
+  .highlight-image.cover { height: auto; align-self: stretch; }
+
+  /* Profundidade: fundo cinza suave e cards brancos com sombra leve */
+  .phone, .sheet { background: #F6F6F6; }
+  .phone-black { background-color: #050505; }
+  .highlight, .read-card, .empty, .stat, .testimonial, .appt, .options {
+    border: 0;
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+  }
+  .highlight, .read-card, .empty, .stat, .testimonial, .options { border-radius: 16px; }
+  .appt { padding: 12px; border-radius: 16px; }
+  .options { padding: 0 12px; }
+  .read-row { margin: -8px 0; padding: 8px 16px 8px 0; }
+  .line { background: #E4E4E4; }
+
+  .dash-header { border-radius: 0 0 40px 40px; }
+
+  /* Sucesso e falha: área principal colorida */
+  .sheet-ok { background: #157A29; }
+  .sheet-fail { background: #B3261E; }
+  .sheet-ok .h, .sheet-ok .t, .sheet-ok .link, .sheet-fail .h, .sheet-fail .t, .sheet-fail .link { color: #FFFFFF; }
+  .sheet-ok .ok-gold, .sheet-fail .fail { background: transparent; border: 3px solid #FFFFFF; color: #FFFFFF; }
+  .sheet-ok .lucide, .sheet-fail .lucide { width: 40px; height: 40px; }
+  .sheet-ok .btn { background: #FFFFFF; color: #157A29; }
+  .sheet-fail .btn { background: #FFFFFF; color: #B3261E; }
 </style>
 </head>
 <body>
 
-<h1 class="title">Protótipo</h1>
+<h1 class="title">Protótipo V2</h1>
 
-<h2 class="flow-title">Abertura</h2>
+<h2 class="flow-title">Autenticação</h2>
+
+<h3 class="flow-sub">Entrar</h3>
 
 <div class="flow">
 
   <div class="step" id="ABE-01">
     <p class="step-name"><span class="step-id">ABE-01</span> Tela de abertura</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone phone-black">
       <div class="body center">
         <img class="logo-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic">
       </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -146,25 +332,25 @@
     </div>
   </div>
 
-</div>
-
-<h2 class="flow-title">Autenticação</h2>
-
-<h3 class="flow-sub">Entrar</h3>
-
-<div class="flow">
-
   <div class="step" id="ENT-01">
     <p class="step-name"><span class="step-id">ENT-01</span> Boas-vindas</p>
-    <div class="phone">
-      <div class="body center">
-        <div class="box logo">Logo</div>
-        <div class="box image">Imagem</div>
-        <p class="h text-center">Tudo da clínica no seu telemóvel</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone phone-welcome">
+      <div class="welcome-top">
+        <img class="logo-center" src="style-brand/logo/logo-mark@2x.png" alt="HD Clinic">
+        <img class="box image cover" src="img-modelos/boas-vindas.jpg" alt="Mulher com a pele cuidada">
+        <p class="phrase text-center">Realçamos a sua beleza natural com cuidados personalizados, do primeiro contacto ao resultado final.</p>
         <div class="dots"><div class="dot dot-on"></div><div class="dot"></div><div class="dot"></div></div>
       </div>
-      <div class="btn">Entrar</div>
-      <div class="btn btn-line">Criar conta</div>
+      <div class="welcome-bottom">
+        <div class="btn">Entrar</div>
+        <div class="btn btn-line">Criar conta</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -180,19 +366,34 @@
 
   <div class="step" id="ENT-02">
     <p class="step-name"><span class="step-id">ENT-02</span> Entrar</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><div class="bar-center"><div class="box logo-bar">Logo</div></div><div class="arrow"></div></div>
-      <div class="body">
-        <p class="h">Entrar</p>
-        <div class="field"><p class="label">E-mail</p><div class="input"></div></div>
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><div class="bar-center"><img class="logo-bar-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic"></div><div class="arrow"></div></div>
+        <div class="head-center">
+          <p class="h text-center">Entrar</p>
+          <p class="t-sm text-center">Não tem conta? <span class="gold-link">Criar conta</span></p>
+        </div>
+      </div>
+      <div class="sheet">
+      <div class="body body-small">
+        <div class="field"><p class="label">E-mail</p><div class="input">nome@email.com</div></div>
         <div class="field">
           <p class="label">Senha</p>
-          <div class="input"></div>
+          <div class="input">A sua senha</div>
           <p class="forgot">Esqueceu a senha? Recuperar</p>
         </div>
         <div class="btn">Entrar</div>
+        <div class="or oculto"><div class="or-line"></div><p class="t-sm">Ou</p><div class="or-line"></div></div>
+        <div class="btn-social oculto"><svg class="social-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><span>Continuar com Google</span></div>
+        <div class="btn-social oculto"><svg class="social-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#1877F2" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.02 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg><span>Continuar com Facebook</span></div>
       </div>
-      <div class="link">Criar conta</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -201,6 +402,8 @@
       <ul class="note-list">
         <li>Preencher e-mail e senha</li>
         <li>Entrar: vai para DAS-01</li>
+        <li class="oculto">Continuar com Google: vai para DAS-01</li>
+        <li class="oculto">Continuar com Facebook: vai para DAS-01</li>
         <li>Esqueceu a senha: vai para REC-01</li>
         <li>Criar conta: vai para REG-01</li>
         <li>Voltar: vai para ENT-01</li>
@@ -216,14 +419,24 @@
 
   <div class="step" id="REC-01">
     <p class="step-name"><span class="step-id">REC-01</span> Indicar e-mail</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><p class="bar-title">Recuperar senha</p></div>
-      <div class="body">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Recuperar senha</p></div>
         <p class="h">Indique o seu e-mail</p>
+      </div>
+      <div class="sheet">
+      <div class="body">
         <p class="t">Vamos enviar um código para recuperar a sua senha.</p>
-        <div class="field"><p class="label">E-mail</p><div class="input"></div></div>
+        <div class="field"><p class="label">E-mail</p><div class="input">nome@email.com</div></div>
         <div class="btn">Enviar código</div>
       </div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -239,15 +452,25 @@
 
   <div class="step" id="REC-02">
     <p class="step-name"><span class="step-id">REC-02</span> Código</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><p class="bar-title">Recuperar senha</p></div>
-      <div class="body">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Recuperar senha</p></div>
         <p class="h">Introduza o código</p>
+      </div>
+      <div class="sheet">
+      <div class="body">
         <p class="t">Enviámos um código para o seu e-mail.</p>
-        <div class="field"><p class="label">Código</p><div class="input"></div></div>
+        <div class="field"><p class="label">Código</p><div class="input">000000</div></div>
         <div class="link">Reenviar código</div>
         <div class="btn">Validar</div>
       </div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -264,14 +487,24 @@
 
   <div class="step" id="REC-03">
     <p class="step-name"><span class="step-id">REC-03</span> Nova senha</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><p class="bar-title">Recuperar senha</p></div>
-      <div class="body">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Recuperar senha</p></div>
         <p class="h">Crie uma nova senha</p>
-        <div class="field"><p class="label">Nova senha</p><div class="input"></div></div>
-        <div class="field"><p class="label">Confirmar nova senha</p><div class="input"></div></div>
+      </div>
+      <div class="sheet">
+      <div class="body">
+        <div class="field"><p class="label">Nova senha</p><div class="input">Mínimo de 8 caracteres</div></div>
+        <div class="field"><p class="label">Confirmar nova senha</p><div class="input">Repita a nova senha</div></div>
         <div class="btn">Guardar senha</div>
       </div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -287,12 +520,23 @@
 
   <div class="step" id="REC-04">
     <p class="step-name"><span class="step-id">REC-04</span> Senha alterada</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
+      <div class="top-dark">
+        <img class="logo-bar-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic">
+      </div>
+      <div class="sheet sheet-ok">
       <div class="body center">
-        <div class="box ok">OK</div>
+        <div class="ok-gold"><i data-lucide="check"></i></div>
         <p class="h text-center">Senha alterada</p>
       </div>
       <div class="btn">Ir para Entrar</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -312,28 +556,40 @@
 
   <div class="step" id="REG-01">
     <p class="step-name"><span class="step-id">REG-01</span> Como funciona</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><div class="bar-center"><div class="box logo-bar">Logo</div></div><div class="arrow"></div></div>
-      <div class="body">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><div class="bar-center"><img class="logo-bar-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic"></div><div class="arrow"></div></div>
         <p class="h">Inicie o seu registo na HD Clinic</p>
+      </div>
+      <div class="sheet">
+      <div class="body body-small">
         <div class="item">
-          <div class="box icon"></div>
+          <div class="icon"><i data-lucide="user-round"></i></div>
           <div class="item-text"><p class="label">1. Registo de cliente</p><p class="t">Preencha os seus dados básicos.</p></div>
         </div>
         <div class="item">
-          <div class="box icon"></div>
+          <div class="icon"><i data-lucide="badge-check"></i></div>
           <div class="item-text"><p class="label">2. Validar contactos</p><p class="t">Confirme o seu e-mail e telefone.</p></div>
         </div>
         <div class="item">
-          <div class="box icon"></div>
+          <div class="icon"><i data-lucide="shield-check"></i></div>
           <div class="item-text"><p class="label">3. Política de consentimentos</p><p class="t">Leia e aceite as políticas.</p></div>
         </div>
         <div class="item">
-          <div class="box icon"></div>
+          <div class="icon"><i data-lucide="key-round"></i></div>
           <div class="item-text"><p class="label">4. Definir password</p><p class="t">Crie a sua password de acesso.</p></div>
         </div>
       </div>
       <div class="btn">Iniciar registo</div>
+      <div class="or oculto"><div class="or-line"></div><p class="t-sm">Ou</p><div class="or-line"></div></div>
+      <div class="cta-row oculto"><div class="btn-social btn-social-half"><svg class="social-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><span>Google</span></div><div class="btn-social btn-social-half"><svg class="social-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#1877F2" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.02 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg><span>Facebook</span></div></div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -341,6 +597,7 @@
       <p class="note-title">O que o utilizador pode fazer</p>
       <ul class="note-list">
         <li>Iniciar registo: vai para REG-02</li>
+        <li class="oculto">Google ou Facebook: cria a conta e vai para DAS-01</li>
         <li>Voltar: vai para ENT-01</li>
       </ul>
     </div>
@@ -348,19 +605,29 @@
 
   <div class="step" id="REG-02">
     <p class="step-name"><span class="step-id">REG-02</span> Dados pessoais</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><p class="bar-title">Registo de cliente</p></div>
-      <div class="body">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Registo de cliente</p></div>
         <div class="etapa">
           <p class="label">Etapa 1 de 4: Registo de cliente</p>
           <div class="segs"><div class="seg seg-on"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
         </div>
         <p class="h">Os seus dados</p>
-        <div class="field"><p class="label">Nome completo</p><div class="input"></div></div>
-        <div class="field"><p class="label">Telefone</p><div class="input">+351</div></div>
-        <div class="field"><p class="label">E-mail</p><div class="input"></div></div>
+      </div>
+      <div class="sheet">
+      <div class="body">
+        <div class="field"><p class="label">Nome completo</p><div class="input">Ex.: Maria Silva</div></div>
+        <div class="field"><p class="label">Telefone</p><div class="input">+351 912 345 678</div></div>
+        <div class="field"><p class="label">E-mail</p><div class="input">nome@email.com</div></div>
       </div>
       <div class="btn">Continuar</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -376,19 +643,29 @@
 
   <div class="step" id="REG-03">
     <p class="step-name"><span class="step-id">REG-03</span> Endereço</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><p class="bar-title">Registo de cliente</p></div>
-      <div class="body">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Registo de cliente</p></div>
         <div class="etapa">
           <p class="label">Etapa 1 de 4: Registo de cliente</p>
           <div class="segs"><div class="seg seg-on"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
         </div>
         <p class="h">O seu endereço</p>
-        <div class="field"><p class="label">Morada</p><div class="input"></div></div>
-        <div class="field"><p class="label">Código postal</p><div class="input"></div></div>
-        <div class="field"><p class="label">Cidade</p><div class="input"></div></div>
+      </div>
+      <div class="sheet">
+      <div class="body">
+        <div class="field"><p class="label">Morada</p><div class="input">Rua, número e andar</div></div>
+        <div class="field"><p class="label">Código postal</p><div class="input">0000-000</div></div>
+        <div class="field"><p class="label">Cidade</p><div class="input">Ex.: Lisboa</div></div>
       </div>
       <div class="btn">Continuar</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -404,20 +681,30 @@
 
   <div class="step" id="REG-04">
     <p class="step-name"><span class="step-id">REG-04</span> Validar contactos</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><p class="bar-title">Validar contactos</p></div>
-      <div class="body">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Validar contactos</p></div>
         <div class="etapa">
           <p class="label">Etapa 2 de 4: Validar contactos</p>
           <div class="segs"><div class="seg seg-on"></div><div class="seg seg-on"></div><div class="seg"></div><div class="seg"></div></div>
         </div>
         <p class="h">Confirme os seus contactos</p>
+      </div>
+      <div class="sheet">
+      <div class="body">
         <p class="t">Enviámos um código para o seu e-mail e outro para o seu telefone.</p>
-        <div class="field"><p class="label">Código do e-mail</p><div class="input"></div></div>
-        <div class="field"><p class="label">Código do telefone</p><div class="input"></div></div>
+        <div class="field"><p class="label">Código do e-mail</p><div class="input">000000</div></div>
+        <div class="field"><p class="label">Código do telefone</p><div class="input">000000</div></div>
         <div class="link">Reenviar códigos</div>
       </div>
       <div class="btn">Validar</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -434,20 +721,30 @@
 
   <div class="step" id="REG-05">
     <p class="step-name"><span class="step-id">REG-05</span> Política de consentimentos</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><p class="bar-title">Política de consentimentos</p></div>
-      <div class="body">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Política de consentimentos</p></div>
         <div class="etapa">
           <p class="label">Etapa 3 de 4: Política de consentimentos</p>
           <div class="segs"><div class="seg seg-on"></div><div class="seg seg-on"></div><div class="seg seg-on"></div><div class="seg"></div></div>
         </div>
         <p class="h">Consentimentos</p>
+      </div>
+      <div class="sheet">
+      <div class="body">
         <div class="check"><div class="check-box"></div><p class="label">Aceito os Termos e Condições</p></div>
         <div class="check"><div class="check-box"></div><p class="label">Aceito a Política de Privacidade</p></div>
         <div class="check"><div class="check-box"></div><p class="label">Autorizo o tratamento dos meus dados de saúde</p></div>
         <div class="check"><div class="check-box"></div><p class="label">Quero receber novidades (opcional)</p></div>
       </div>
       <div class="btn">Aceitar e continuar</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -464,18 +761,28 @@
 
   <div class="step" id="REG-06">
     <p class="step-name"><span class="step-id">REG-06</span> Definir password</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><p class="bar-title">Definir password</p></div>
-      <div class="body">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Definir password</p></div>
         <div class="etapa">
           <p class="label">Etapa 4 de 4: Definir password</p>
           <div class="segs"><div class="seg seg-on"></div><div class="seg seg-on"></div><div class="seg seg-on"></div><div class="seg seg-on"></div></div>
         </div>
         <p class="h">Defina a sua password</p>
-        <div class="field"><p class="label">Password</p><div class="input"></div></div>
-        <div class="field"><p class="label">Confirmar password</p><div class="input"></div></div>
+      </div>
+      <div class="sheet">
+      <div class="body">
+        <div class="field"><p class="label">Password</p><div class="input">Mínimo de 8 caracteres</div></div>
+        <div class="field"><p class="label">Confirmar password</p><div class="input">Repita a password</div></div>
       </div>
       <div class="btn">Criar conta</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -491,12 +798,23 @@
 
   <div class="step" id="REG-07">
     <p class="step-name"><span class="step-id">REG-07</span> Conta criada</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
+      <div class="top-dark">
+        <img class="logo-bar-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic">
+      </div>
+      <div class="sheet sheet-ok">
       <div class="body center">
-        <div class="box ok">OK</div>
+        <div class="ok-gold"><i data-lucide="check"></i></div>
         <p class="h text-center">Conta criada</p>
       </div>
       <div class="btn">Ir para o início</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -518,24 +836,26 @@
 
   <div class="step" id="DAS-01">
     <p class="step-name"><span class="step-id">DAS-01</span> Dashboard</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone phone-flush">
       <div class="dash-header">
-        <div class="box avatar">Foto</div>
-        <p class="dash-name">Olá, Fulano</p>
-        <div class="box head-icon">Sino</div>
-        <div class="box head-icon">Sair</div>
+        <img class="box avatar cover" src="img-modelos/avatar.jpg" alt="Foto de perfil">
+        <div class="dash-user"><p class="dash-hello">Olá,</p><p class="dash-name">Fulano Silva</p></div>
+        <div class="head-icon"><i data-lucide="bell"></i></div>
+        <div class="head-icon"><i data-lucide="log-out"></i></div>
       </div>
 
       <div class="dash-scroll">
       <div class="section">
         <div class="highlight">
           <div class="highlight-text">
-            <p class="section-title">O seu plano</p>
-            <p class="label">Plano de tratamento: 3 de 5 sessões concluídas</p>
-            <p class="t-sm">Falta uma sessão para completar a fase atual.</p>
-            <div class="btn btn-small">Agendar sessão</div>
+            <p class="section-title">Pacote Rejuvenescedor</p>
+            <p class="label">3 procedimentos para tratamento de pele</p>
+            <p class="t-sm">Condição promocional por tempo limitado.</p>
+            <div class="btn btn-small">Ver pacote</div>
           </div>
-          <div class="box highlight-image">Imagem</div>
+          <img class="box highlight-image cover" src="img-modelos/pacote-rejuvenescedor.jpg" alt="Pacote Rejuvenescedor">
         </div>
         <div class="dots"><div class="dot dot-on"></div><div class="dot"></div><div class="dot"></div></div>
       </div>
@@ -545,12 +865,39 @@
         <div class="appt">
           <div class="box date-box"><span class="date-month">Dez</span><span class="date-day">02</span></div>
           <div class="item-text"><p class="label">Bioestimulador de Colagénio</p><p class="t-sm">10:00 · Dr. Rodrigo Tavares</p></div>
-          <div class="chevron">›</div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
         </div>
         <div class="appt">
           <div class="box date-box"><span class="date-month">Dez</span><span class="date-day">02</span></div>
           <div class="item-text"><p class="label">Bioestimulador de Colagénio</p><p class="t-sm">10:00 · Dr. Rodrigo Tavares</p></div>
-          <div class="chevron">›</div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+      </div>
+
+      <div class="section section-bleed">
+        <div class="section-head"><p class="section-title">Procedimentos</p><p class="see-all">Ver todos</p></div>
+        <div class="read-row">
+          <div class="read-card proc-card">
+            <img class="box proc-image cover" src="img-modelos/harmonizacao-facial.jpg" alt="Harmonização Facial">
+            <div class="read-body">
+              <p class="label">Harmonização Facial</p>
+              <p class="t-sm">000,00 €</p>
+            </div>
+          </div>
+          <div class="read-card proc-card">
+            <img class="box proc-image cover" src="img-modelos/toxina-botulinica.jpg" alt="Toxina Botulínica">
+            <div class="read-body">
+              <p class="label">Toxina Botulínica</p>
+              <p class="t-sm">000,00 €</p>
+            </div>
+          </div>
+          <div class="read-card proc-card">
+            <img class="box proc-image cover" src="img-modelos/skinbooster.jpg" alt="Skinbooster">
+            <div class="read-body">
+              <p class="label">Skinbooster</p>
+              <p class="t-sm">000,00 €</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -558,7 +905,7 @@
         <div class="section-head"><p class="section-title">Leituras para si</p><p class="see-all">Ver todas</p></div>
         <div class="read-row">
           <div class="read-card">
-            <div class="box read-image">Imagem</div>
+            <img class="box read-image cover" src="img-modelos/leitura-skincare.jpg" alt="Rotina de skincare">
             <div class="read-body">
               <p class="t-sm">Cuidados</p>
               <p class="label">Rotina de skincare pós-procedimento</p>
@@ -566,7 +913,7 @@
             </div>
           </div>
           <div class="read-card">
-            <div class="box read-image">Imagem</div>
+            <img class="box read-image cover" src="img-modelos/leitura-skincare.jpg" alt="Rotina de skincare">
             <div class="read-body">
               <p class="t-sm">Cuidados</p>
               <p class="label">Rotina de skincare pós-procedimento</p>
@@ -578,53 +925,63 @@
       </div>
 
       <div class="bottom-bar">
-        <div class="bar-item bar-item-on"><div class="bar-icon"></div><p class="bar-label">Home</p></div>
-        <div class="bar-item"><div class="bar-icon"></div><p class="bar-label">Serviços</p></div>
-        <div class="bar-item"><div class="bar-plus">+</div></div>
-        <div class="bar-item"><div class="bar-icon"></div><p class="bar-label">Novidades</p></div>
+        <div class="bar-item bar-item-on"><i data-lucide="house"></i><p class="bar-label">Início</p></div>
+        <div class="bar-item"><i data-lucide="calendar-days"></i><p class="bar-label">Agenda</p></div>
+        <div class="bar-item"><div class="bar-plus"><i data-lucide="plus"></i></div></div>
+        <div class="bar-item"><i data-lucide="heart-pulse"></i><p class="bar-label">HD Vita</p></div>
+        <div class="bar-item"><i data-lucide="circle-user"></i><p class="bar-label">Perfil</p></div>
       </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
-      <p class="note-text">Tela principal do app depois de entrar. Mostra destaques, próximos agendamentos e leituras. O conteúdo faz scroll por dentro e a barra inferior fica fixa.</p>
+      <p class="note-text">Tela principal do app depois de entrar. Mostra pacotes promocionais, próximos agendamentos, procedimentos e leituras. O conteúdo faz scroll por dentro e a barra inferior fica fixa.</p>
       <p class="note-title">O que o utilizador pode fazer</p>
       <ul class="note-list">
         <li>Sino: ver notificações (tela ainda não existe)</li>
         <li>Sair: vai para ENT-01</li>
         <li>Deslizar os destaques</li>
-        <li>Agendar sessão: vai para AGE-01</li>
+        <li>Ver pacote: vai para PAC-01</li>
+        <li>Ver todos os procedimentos: vai para CAT-01</li>
+        <li>Abrir um procedimento: vai para CAT-02</li>
         <li>Abrir um agendamento: vai para DET-01</li>
         <li>Deslizar as leituras</li>
         <li>Abrir uma leitura: vai para LEI-01</li>
-        <li>Ver todas as leituras (tela ainda não existe)</li>
-        <li>Home: fica em DAS-01</li>
-        <li>Serviços (tela ainda não existe)</li>
+        <li>Ver todas as leituras: vai para NOV-01</li>
+        <li>Início: fica em DAS-01</li>
+        <li>Agenda: vai para AGN-01</li>
         <li>Botão +: vai para AGE-01</li>
-        <li>Novidades (tela ainda não existe)</li>
+        <li>HD Vita: vai para VIT-01</li>
+        <li>Perfil: vai para PER-01</li>
       </ul>
     </div>
   </div>
 
   <div class="step" id="DAS-02">
     <p class="step-name"><span class="step-id">DAS-02</span> Dashboard sem agendamentos</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone phone-flush">
       <div class="dash-header">
-        <div class="box avatar">Foto</div>
-        <p class="dash-name">Olá, Fulano</p>
-        <div class="box head-icon">Sino</div>
-        <div class="box head-icon">Sair</div>
+        <img class="box avatar cover" src="img-modelos/avatar.jpg" alt="Foto de perfil">
+        <div class="dash-user"><p class="dash-hello">Olá,</p><p class="dash-name">Fulano Silva</p></div>
+        <div class="head-icon"><i data-lucide="bell"></i></div>
+        <div class="head-icon"><i data-lucide="log-out"></i></div>
       </div>
 
       <div class="dash-scroll">
       <div class="section">
         <div class="highlight">
           <div class="highlight-text">
-            <p class="section-title">O seu plano</p>
-            <p class="label">Plano de tratamento: 3 de 5 sessões concluídas</p>
-            <p class="t-sm">Falta uma sessão para completar a fase atual.</p>
-            <div class="btn btn-small">Agendar sessão</div>
+            <p class="section-title">Pacote Rejuvenescedor</p>
+            <p class="label">3 procedimentos para tratamento de pele</p>
+            <p class="t-sm">Condição promocional por tempo limitado.</p>
+            <div class="btn btn-small">Ver pacote</div>
           </div>
-          <div class="box highlight-image">Imagem</div>
+          <img class="box highlight-image cover" src="img-modelos/pacote-rejuvenescedor.jpg" alt="Pacote Rejuvenescedor">
         </div>
         <div class="dots"><div class="dot dot-on"></div><div class="dot"></div><div class="dot"></div></div>
       </div>
@@ -640,11 +997,38 @@
         </div>
       </div>
 
+      <div class="section section-bleed">
+        <div class="section-head"><p class="section-title">Procedimentos</p><p class="see-all">Ver todos</p></div>
+        <div class="read-row">
+          <div class="read-card proc-card">
+            <img class="box proc-image cover" src="img-modelos/harmonizacao-facial.jpg" alt="Harmonização Facial">
+            <div class="read-body">
+              <p class="label">Harmonização Facial</p>
+              <p class="t-sm">000,00 €</p>
+            </div>
+          </div>
+          <div class="read-card proc-card">
+            <img class="box proc-image cover" src="img-modelos/toxina-botulinica.jpg" alt="Toxina Botulínica">
+            <div class="read-body">
+              <p class="label">Toxina Botulínica</p>
+              <p class="t-sm">000,00 €</p>
+            </div>
+          </div>
+          <div class="read-card proc-card">
+            <img class="box proc-image cover" src="img-modelos/skinbooster.jpg" alt="Skinbooster">
+            <div class="read-body">
+              <p class="label">Skinbooster</p>
+              <p class="t-sm">000,00 €</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="section section-bleed section-last">
         <div class="section-head"><p class="section-title">Leituras para si</p><p class="see-all">Ver todas</p></div>
         <div class="read-row">
           <div class="read-card">
-            <div class="box read-image">Imagem</div>
+            <img class="box read-image cover" src="img-modelos/leitura-skincare.jpg" alt="Rotina de skincare">
             <div class="read-body">
               <p class="t-sm">Cuidados</p>
               <p class="label">Rotina de skincare pós-procedimento</p>
@@ -652,7 +1036,7 @@
             </div>
           </div>
           <div class="read-card">
-            <div class="box read-image">Imagem</div>
+            <img class="box read-image cover" src="img-modelos/leitura-skincare.jpg" alt="Rotina de skincare">
             <div class="read-body">
               <p class="t-sm">Cuidados</p>
               <p class="label">Rotina de skincare pós-procedimento</p>
@@ -664,11 +1048,16 @@
       </div>
 
       <div class="bottom-bar">
-        <div class="bar-item bar-item-on"><div class="bar-icon"></div><p class="bar-label">Home</p></div>
-        <div class="bar-item"><div class="bar-icon"></div><p class="bar-label">Serviços</p></div>
-        <div class="bar-item"><div class="bar-plus">+</div></div>
-        <div class="bar-item"><div class="bar-icon"></div><p class="bar-label">Novidades</p></div>
+        <div class="bar-item bar-item-on"><i data-lucide="house"></i><p class="bar-label">Início</p></div>
+        <div class="bar-item"><i data-lucide="calendar-days"></i><p class="bar-label">Agenda</p></div>
+        <div class="bar-item"><div class="bar-plus"><i data-lucide="plus"></i></div></div>
+        <div class="bar-item"><i data-lucide="heart-pulse"></i><p class="bar-label">HD Vita</p></div>
+        <div class="bar-item"><i data-lucide="circle-user"></i><p class="bar-label">Perfil</p></div>
       </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -676,8 +1065,186 @@
       <p class="note-title">O que o utilizador pode fazer</p>
       <ul class="note-list">
         <li>Agendar: vai para AGE-01</li>
-        <li>Suporte: contactar a clínica (tela ainda não existe)</li>
+        <li>Suporte: abre o WhatsApp da clínica</li>
         <li>Restantes ações iguais a DAS-01</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<h3 class="flow-sub">Procedimentos</h3>
+
+<div class="flow">
+
+  <div class="step" id="CAT-01">
+    <p class="step-name"><span class="step-id">CAT-01</span> Catálogo</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Procedimentos</p></div>
+        <p class="h">Catálogo</p>
+      </div>
+      <div class="sheet sheet-scroll">
+      <div class="body body-small">
+        <div class="input">Procurar procedimento</div>
+        <div class="chips"><div class="chip chip-on">Faciais</div><div class="chip">Corporais</div><div class="chip">Cirurgias</div><div class="chip">Íntimas</div><div class="chip">Plásticas</div><div class="chip">Estética</div><div class="chip">Dentária</div></div>
+        <div class="appt">
+          <img class="box thumb cover" src="img-modelos/harmonizacao-facial.jpg" alt="Harmonização Facial">
+          <div class="item-text"><p class="label">Harmonização Facial</p><p class="t-sm">00 min · 000,00 €</p></div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <img class="box thumb cover" src="img-modelos/toxina-botulinica.jpg" alt="Toxina Botulínica">
+          <div class="item-text"><p class="label">Toxina Botulínica</p><p class="t-sm">00 min · 000,00 €</p></div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <img class="box thumb cover" src="img-modelos/acido-hialuronico.jpg" alt="Ácido Hialurônico">
+          <div class="item-text"><p class="label">Ácido Hialurônico</p><p class="t-sm">00 min · 000,00 €</p></div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <img class="box thumb cover" src="img-modelos/bioestimuladores.jpg" alt="Bioestimuladores de Colágeno">
+          <div class="item-text"><p class="label">Bioestimuladores de Colágeno</p><p class="t-sm">00 min · 000,00 €</p></div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <img class="box thumb cover" src="img-modelos/skinbooster.jpg" alt="Skinbooster">
+          <div class="item-text"><p class="label">Skinbooster</p><p class="t-sm">00 min · 000,00 €</p></div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <img class="box thumb cover" src="img-modelos/rejuvenescimento-facial.jpg" alt="Rejuvenescimento Facial">
+          <div class="item-text"><p class="label">Rejuvenescimento Facial</p><p class="t-sm">00 min · 000,00 €</p></div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+      </div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Lista todos os procedimentos da clínica, por segmento ou pela busca. O conteúdo faz scroll por dentro.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Procurar pelo nome</li>
+        <li>Filtrar por segmento</li>
+        <li>Abrir um procedimento: vai para CAT-02</li>
+        <li>Voltar: vai para DAS-01</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="CAT-02">
+    <p class="step-name"><span class="step-id">CAT-02</span> Procedimento</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone phone-flush">
+      <div class="top-flush">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Procedimento</p></div>
+      </div>
+      <div class="dash-scroll">
+        <img class="box read-hero cover" src="img-modelos/toxina-botulinica.jpg" alt="Toxina Botulínica">
+        <div class="section section-last">
+          <p class="h">Toxina Botulínica</p>
+          <div class="stats">
+            <div class="stat"><p class="t-sm">Tempo</p><p class="label">00 min</p></div>
+            <div class="stat"><p class="t-sm">Valor</p><p class="label">000,00 €</p></div>
+          </div>
+          <div class="desc">
+            <p class="label">Descrição</p>
+            <p class="t-sm">Procedimento minimamente invasivo que reduz as linhas de expressão e rugas, com a aplicação de pequenas quantidades em áreas específicas do rosto.</p>
+          </div>
+          <div class="desc">
+            <p class="label">Indicação</p>
+            <p class="t-sm">Linhas de expressão e rugas.</p>
+          </div>
+          <div class="desc">
+            <p class="label">Depoimentos</p>
+          <div class="testimonial">
+            <p class="label">Nome da cliente</p>
+            <div class="line"></div>
+            <div class="line line-short"></div>
+          </div>
+          <div class="testimonial">
+            <p class="label">Nome da cliente</p>
+            <div class="line"></div>
+            <div class="line line-short"></div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="fixed-cta"><div class="btn">Agendar</div></div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Mostra foto, tempo, valor, descrição, indicação e depoimentos do procedimento. O conteúdo faz scroll e o botão Agendar fica fixo.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Agendar: vai para AGE-02, com o procedimento já escolhido</li>
+        <li>Voltar: vai para CAT-01 ou DAS-01, conforme a origem</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<h3 class="flow-sub">Pacotes promocionais</h3>
+
+<div class="flow">
+
+  <div class="step" id="PAC-01">
+    <p class="step-name"><span class="step-id">PAC-01</span> Pacote</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone phone-flush">
+      <div class="top-flush">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Pacote promocional</p></div>
+      </div>
+      <div class="dash-scroll">
+        <img class="box read-hero cover" src="img-modelos/pacote-rejuvenescedor.jpg" alt="Pacote Rejuvenescedor">
+        <div class="section section-last">
+          <p class="h">Pacote Rejuvenescedor</p>
+          <div class="stats">
+            <div class="stat"><p class="t-sm">Sessões</p><p class="label">3 procedimentos</p></div>
+            <div class="stat"><p class="t-sm">Valor</p><p class="label">000,00 €</p></div>
+          </div>
+          <div class="desc">
+            <p class="label">Sobre o pacote</p>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line line-short"></div>
+          </div>
+          <div class="desc">
+            <p class="label">Inclui</p>
+            <div class="meta-check"><i data-lucide="check"></i><p class="t-sm">Toxina Botulínica</p></div>
+            <div class="meta-check"><i data-lucide="check"></i><p class="t-sm">Skinbooster</p></div>
+            <div class="meta-check"><i data-lucide="check"></i><p class="t-sm">Laser CO2</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="fixed-cta"><div class="btn">Agendar pacote</div></div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Mostra um pacote promocional com vários procedimentos, valor e o que inclui. O conteúdo faz scroll e o botão fica fixo.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Agendar pacote: vai para AGE-02</li>
+        <li>Voltar: vai para DAS-01</li>
       </ul>
     </div>
   </div>
@@ -689,9 +1256,56 @@
 <div class="flow">
 
   <div class="step" id="AGE-01">
-    <p class="step-name"><span class="step-id">AGE-01</span> Data e horário</p>
+    <p class="step-name"><span class="step-id">AGE-01</span> Procedimento</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><p class="bar-title">Agendar sessão</p></div>
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Agendar sessão</p></div>
+        <p class="h">Escolha o procedimento</p>
+      </div>
+      <div class="sheet">
+      <div class="body body-small">
+        <div class="input">Procurar procedimento</div>
+        <div class="chips"><div class="chip chip-on">Faciais</div><div class="chip">Corporais</div><div class="chip">Cirurgias</div><div class="chip">Íntimas</div><div class="chip">Plásticas</div><div class="chip">Estética</div><div class="chip">Dentária</div></div>
+        <div class="options">
+          <div class="option"><p class="label grow">Harmonização Facial</p><div class="radio"></div></div>
+          <div class="option"><p class="label grow">Toxina Botulínica</p><div class="radio"></div></div>
+          <div class="option"><p class="label grow">Ácido Hialurônico</p><div class="radio"></div></div>
+          <div class="option"><p class="label grow">Bioestimulador de Colagénio</p><div class="radio radio-on"></div></div>
+          <div class="option"><p class="label grow">Skinbooster</p><div class="radio"></div></div>
+        </div>
+      </div>
+      <div class="btn">Continuar</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Primeira tela do agendamento. O cliente escolhe o procedimento por segmento ou pela busca.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Procurar pelo nome</li>
+        <li>Filtrar por segmento</li>
+        <li>Escolher um procedimento</li>
+        <li>Continuar: vai para AGE-02</li>
+        <li>Voltar: vai para a tela anterior</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="AGE-02">
+    <p class="step-name"><span class="step-id">AGE-02</span> Data e horário</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Agendar sessão</p></div>
+      </div>
+      <div class="sheet">
       <div class="body body-tight">
         <div class="calendar">
           <p class="label">Dezembro 2026</p>
@@ -709,26 +1323,36 @@
         </div>
       </div>
       <div class="btn">Continuar</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
-      <p class="note-text">Primeira tela do agendamento. Mostra os dias e os horários disponíveis.</p>
+      <p class="note-text">Segunda tela do agendamento. Mostra os dias e os horários disponíveis.</p>
       <p class="note-title">O que o utilizador pode fazer</p>
       <ul class="note-list">
         <li>Escolher o dia</li>
         <li>Escolher o horário</li>
-        <li>Continuar: vai para AGE-02</li>
-        <li>Voltar: vai para a tela anterior</li>
+        <li>Continuar: vai para AGE-03</li>
+        <li>Voltar: vai para AGE-01</li>
       </ul>
     </div>
   </div>
 
-  <div class="step" id="AGE-02">
-    <p class="step-name"><span class="step-id">AGE-02</span> Confirmar</p>
+  <div class="step" id="AGE-03">
+    <p class="step-name"><span class="step-id">AGE-03</span> Confirmar</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><p class="bar-title">Confirmar agendamento</p></div>
-      <div class="body">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Confirmar agendamento</p></div>
         <p class="h">Confirme os dados</p>
+      </div>
+      <div class="sheet">
+      <div class="body">
         <div class="info-list">
         <div class="info-row"><p class="t-sm">Procedimento</p><p class="label">Bioestimulador de Colagénio</p></div>
         <div class="info-row"><p class="t-sm">Profissional</p><p class="label">Dr. Rodrigo Tavares</p></div>
@@ -739,6 +1363,11 @@
         <p class="t-sm">O pagamento é feito fora do app, na página segura da Stripe.</p>
       </div>
       <div class="btn">Pagar com Stripe</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -746,26 +1375,36 @@
       <p class="note-title">O que o utilizador pode fazer</p>
       <ul class="note-list">
         <li>Rever os dados</li>
-        <li>Pagar com Stripe: abre AGE-03</li>
-        <li>Voltar: vai para AGE-01</li>
+        <li>Pagar com Stripe: abre AGE-04</li>
+        <li>Voltar: vai para AGE-02</li>
       </ul>
     </div>
   </div>
 
-  <div class="step" id="AGE-03">
-    <p class="step-name"><span class="step-id">AGE-03</span> Pagamento Stripe</p>
+  <div class="step" id="AGE-04">
+    <p class="step-name"><span class="step-id">AGE-04</span> Pagamento Stripe</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">×</div><p class="bar-title">Stripe</p></div>
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="x"></i></div><p class="bar-title">Stripe</p></div>
+        <p class="h">00,00 €</p>
+      </div>
+      <div class="sheet">
       <div class="body">
         <p class="t">Página externa, fora do app</p>
-        <p class="h">00,00 €</p>
-        <div class="field"><p class="label">Número do cartão</p><div class="input"></div></div>
+        <div class="field"><p class="label">Número do cartão</p><div class="input">0000 0000 0000 0000</div></div>
         <div class="cta-row">
-          <div class="field grow"><p class="label">Validade</p><div class="input"></div></div>
-          <div class="field grow"><p class="label">CVC</p><div class="input"></div></div>
+          <div class="field grow"><p class="label">Validade</p><div class="input">MM/AA</div></div>
+          <div class="field grow"><p class="label">CVC</p><div class="input">000</div></div>
         </div>
       </div>
       <div class="btn">Pagar</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -773,22 +1412,34 @@
       <p class="note-title">O que o utilizador pode fazer</p>
       <ul class="note-list">
         <li>Preencher os dados do cartão</li>
-        <li>Pagar: volta ao app em AGE-04</li>
-        <li>Fechar: volta para AGE-02</li>
+        <li>Pagar: volta ao app em AGE-05</li>
+        <li>Pagamento recusado: vai para AGE-06</li>
+        <li>Fechar: volta para AGE-03</li>
       </ul>
     </div>
   </div>
 
-  <div class="step" id="AGE-04">
-    <p class="step-name"><span class="step-id">AGE-04</span> Sessão agendada</p>
+  <div class="step" id="AGE-05">
+    <p class="step-name"><span class="step-id">AGE-05</span> Sessão agendada</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
+      <div class="top-dark">
+        <img class="logo-bar-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic">
+      </div>
+      <div class="sheet sheet-ok">
       <div class="body center">
-        <div class="box ok">OK</div>
+        <div class="ok-gold"><i data-lucide="check"></i></div>
         <p class="h text-center">Sessão agendada</p>
         <p class="t text-center">02 Dez, 15:00</p>
       </div>
       <div class="btn">Ver agendamento</div>
       <div class="link">Voltar à dashboard</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -801,18 +1452,126 @@
     </div>
   </div>
 
+  <div class="step" id="AGE-06">
+    <p class="step-name"><span class="step-id">AGE-06</span> Falha no pagamento</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="x"></i></div><p class="bar-title">Stripe</p></div>
+        <p class="h">Pagamento não concluído</p>
+      </div>
+      <div class="sheet sheet-fail">
+      <div class="body center">
+        <div class="fail"><i data-lucide="x"></i></div>
+        <p class="t text-center">Não foi possível concluir o pagamento. O agendamento ainda não foi confirmado.</p>
+      </div>
+      <div class="btn">Tentar novamente</div>
+      <div class="link">Voltar ao app</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Página web da Stripe, fora do app, quando o pagamento é recusado ou não termina.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Tentar novamente: vai para AGE-04</li>
+        <li>Voltar ao app: vai para AGE-03</li>
+      </ul>
+    </div>
+  </div>
+
 </div>
 
-<h3 class="flow-sub">Detalhe do agendamento</h3>
+<h2 class="flow-title">Agenda</h2>
 
 <div class="flow">
 
+  <div class="step" id="AGN-01">
+    <p class="step-name"><span class="step-id">AGN-01</span> Agenda</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone phone-flush">
+      <div class="dash-header">
+        <p class="dash-name dash-title">Agenda</p>
+        <div class="head-icon"><i data-lucide="bell"></i></div>
+      </div>
+      <div class="dash-scroll">
+      <div class="section">
+        <p class="section-title">Próximos agendamentos</p>
+        <div class="appt">
+          <div class="box date-box"><span class="date-month">Dez</span><span class="date-day">02</span></div>
+          <div class="item-text"><p class="label">Bioestimulador de Colagénio</p><p class="t-sm">10:00 · Dr. Rodrigo Tavares</p></div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <div class="box date-box"><span class="date-month">Dez</span><span class="date-day">16</span></div>
+          <div class="item-text"><p class="label">Harmonização facial</p><p class="t-sm">15:30 · Dra. Helena Duarte</p></div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+      </div>
+
+      <div class="section section-last">
+        <p class="section-title">Histórico</p>
+        <div class="appt">
+          <div class="box date-box"><span class="date-month">Nov</span><span class="date-day">18</span></div>
+          <div class="item-text"><p class="label">Harmonização facial</p><p class="t-sm">11:00 · Dra. Helena Duarte</p></div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <div class="box date-box"><span class="date-month">Out</span><span class="date-day">21</span></div>
+          <div class="item-text"><p class="label">Bioestimulador de Colagénio</p><p class="t-sm">14:30 · Dr. Rodrigo Tavares</p></div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <div class="box date-box"><span class="date-month">Set</span><span class="date-day">09</span></div>
+          <div class="item-text"><p class="label">Consulta de avaliação</p><p class="t-sm">12:00 · Dra. Helena Duarte</p></div>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="bottom-bar">
+        <div class="bar-item"><i data-lucide="house"></i><p class="bar-label">Início</p></div>
+        <div class="bar-item bar-item-on"><i data-lucide="calendar-days"></i><p class="bar-label">Agenda</p></div>
+        <div class="bar-item"><div class="bar-plus"><i data-lucide="plus"></i></div></div>
+        <div class="bar-item"><i data-lucide="heart-pulse"></i><p class="bar-label">HD Vita</p></div>
+        <div class="bar-item"><i data-lucide="circle-user"></i><p class="bar-label">Perfil</p></div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Lista os próximos agendamentos e o histórico do cliente. O conteúdo faz scroll por dentro e a barra inferior fica fixa.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Abrir um próximo agendamento: vai para DET-01</li>
+        <li>Abrir um item do histórico: vai para DET-02</li>
+        <li>Botão +: vai para AGE-01</li>
+        <li>Sino: ver notificações (tela ainda não existe)</li>
+        <li>Barra inferior: muda de módulo</li>
+      </ul>
+    </div>
+  </div>
+
   <div class="step" id="DET-01">
     <p class="step-name"><span class="step-id">DET-01</span> Detalhe do agendamento</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone">
-      <div class="bar"><div class="arrow">←</div><p class="bar-title">Agendamento</p></div>
-      <div class="body">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Agendamento</p></div>
         <p class="h">Bioestimulador de Colagénio</p>
+      </div>
+      <div class="sheet">
+      <div class="body">
         <div class="info-list">
         <div class="info-row"><p class="t-sm">Data e hora</p><p class="label">02 Dez, 10:00</p></div>
         <div class="info-row"><p class="t-sm">Médico</p><p class="label">Dr. Rodrigo Tavares</p></div>
@@ -830,33 +1589,330 @@
         <div class="btn btn-line">Cancelar</div>
         <div class="btn">Reagendar</div>
       </div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
       <p class="note-text">Abre ao clicar num agendamento. Mostra local, médico, procedimento e descrição.</p>
       <p class="note-title">O que o utilizador pode fazer</p>
       <ul class="note-list">
-        <li>Reagendar: vai para AGE-01</li>
-        <li>Cancelar (tela ainda não existe)</li>
-        <li>Voltar: vai para DAS-01</li>
+        <li>Reagendar: vai para DET-05</li>
+        <li>Cancelar: vai para DET-03</li>
+        <li>Voltar: vai para AGN-01 ou DAS-01, conforme a origem</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="DET-02">
+    <p class="step-name"><span class="step-id">DET-02</span> Detalhe do histórico</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Histórico</p></div>
+        <p class="h">Harmonização facial</p>
+      </div>
+      <div class="sheet sheet-scroll">
+      <div class="body body-small">
+        <div class="info-list">
+        <div class="info-row"><p class="t-sm">Data e hora</p><p class="label">18 Nov, 11:00</p></div>
+        <div class="info-row"><p class="t-sm">Médico</p><p class="label">Dra. Helena Duarte</p></div>
+        <div class="info-row"><p class="t-sm">Local</p><p class="label">Consultório 2</p></div>
+        </div>
+        <div class="desc">
+          <p class="label">Descrição do procedimento</p>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line line-short"></div>
+        </div>
+        <div class="desc">
+          <p class="label">Observações do médico</p>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line line-short"></div>
+        </div>
+        <div class="desc">
+          <p class="label">Anexos</p>
+          <div class="appt">
+            <div class="icon"><i data-lucide="file-text"></i></div>
+            <div class="item-text"><p class="label">receita.pdf</p><p class="t-sm">PDF · 120 KB</p></div>
+            <div class="chevron"><i data-lucide="download"></i></div>
+          </div>
+          <div class="appt">
+            <div class="icon"><i data-lucide="file-text"></i></div>
+            <div class="item-text"><p class="label">cuidados.pdf</p><p class="t-sm">PDF · 340 KB</p></div>
+            <div class="chevron"><i data-lucide="download"></i></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Abre ao clicar num item do histórico em AGN-01. Mostra as mesmas informações de DET-01, sem reagendar ou cancelar, com observações do médico e anexos. O conteúdo faz scroll por dentro.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Ler as observações do médico</li>
+        <li>Abrir ou descarregar um anexo PDF</li>
+        <li>Voltar: vai para AGN-01</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="DET-03">
+    <p class="step-name"><span class="step-id">DET-03</span> Cancelar agendamento</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Cancelar agendamento</p></div>
+        <p class="h">Quer cancelar este agendamento?</p>
+      </div>
+      <div class="sheet">
+      <div class="body">
+        <div class="info-list">
+        <div class="info-row"><p class="t-sm">Procedimento</p><p class="label">Bioestimulador de Colagénio</p></div>
+        <div class="info-row"><p class="t-sm">Data e hora</p><p class="label">02 Dez, 10:00</p></div>
+        <div class="info-row"><p class="t-sm">Médico</p><p class="label">Dr. Rodrigo Tavares</p></div>
+        </div>
+        <div class="desc">
+          <p class="label">Prazo e reembolso</p>
+          <div class="line"></div>
+          <div class="line line-short"></div>
+        </div>
+      </div>
+      <div class="btn btn-danger-solid">Cancelar agendamento</div>
+      <div class="link">Manter agendamento</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Confirma o cancelamento e mostra a regra de prazo e reembolso.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Cancelar agendamento: vai para DET-04</li>
+        <li>Manter agendamento: vai para DET-01</li>
+        <li>Voltar: vai para DET-01</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="DET-04">
+    <p class="step-name"><span class="step-id">DET-04</span> Agendamento cancelado</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone">
+      <div class="top-dark">
+        <img class="logo-bar-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic">
+      </div>
+      <div class="sheet sheet-ok">
+      <div class="body center">
+        <div class="ok-gold"><i data-lucide="check"></i></div>
+        <p class="h text-center">Agendamento cancelado</p>
+        <p class="t text-center">02 Dez, 10:00</p>
+      </div>
+      <div class="btn">Voltar à agenda</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Confirma que o agendamento foi cancelado.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Voltar à agenda: vai para AGN-01</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="DET-05">
+    <p class="step-name"><span class="step-id">DET-05</span> Reagendar</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone">
+      <div class="top-dark">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Reagendar</p></div>
+        <p class="h">Escolha nova data</p>
+      </div>
+      <div class="sheet">
+      <div class="body body-tight">
+        <div class="calendar">
+          <p class="label">Dezembro 2026</p>
+          <div class="cal-row"><div class="cal-head">S</div><div class="cal-head">T</div><div class="cal-head">Q</div><div class="cal-head">Q</div><div class="cal-head">S</div><div class="cal-head">S</div><div class="cal-head">D</div></div>
+          <div class="cal-row"><div class="cal-day"></div><div class="cal-day">1</div><div class="cal-day cal-on">2</div><div class="cal-day">3</div><div class="cal-day">4</div><div class="cal-day cal-off">5</div><div class="cal-day cal-off">6</div></div>
+          <div class="cal-row"><div class="cal-day">7</div><div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day cal-off">12</div><div class="cal-day cal-off">13</div></div>
+          <div class="cal-row"><div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day cal-off">19</div><div class="cal-day cal-off">20</div></div>
+          <div class="cal-row"><div class="cal-day">21</div><div class="cal-day">22</div><div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div><div class="cal-day cal-off">26</div><div class="cal-day cal-off">27</div></div>
+          <div class="cal-row"><div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day">30</div><div class="cal-day">31</div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div></div>
+        </div>
+        <div class="slots-wrap">
+          <p class="label">Horários disponíveis</p>
+          <div class="slots"><div class="slot">11:00</div><div class="slot">12:00</div><div class="slot">14:00</div><div class="slot slot-on">15:00</div></div>
+          <div class="slots"><div class="slot">16:00</div><div class="slot">17:00</div><div class="slot">18:00</div><div class="slot">19:00</div></div>
+        </div>
+      </div>
+      <div class="btn">Confirmar novo horário</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Escolha de nova data e hora para o mesmo procedimento, sem novo pagamento.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Escolher o dia</li>
+        <li>Escolher o horário</li>
+        <li>Confirmar novo horário: vai para DET-06</li>
+        <li>Voltar: vai para DET-01</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="DET-06">
+    <p class="step-name"><span class="step-id">DET-06</span> Agendamento reagendado</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone">
+      <div class="top-dark">
+        <img class="logo-bar-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic">
+      </div>
+      <div class="sheet sheet-ok">
+      <div class="body center">
+        <div class="ok-gold"><i data-lucide="check"></i></div>
+        <p class="h text-center">Agendamento reagendado</p>
+        <p class="t text-center">02 Dez, 15:00</p>
+      </div>
+      <div class="btn">Ver agendamento</div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Confirma a nova data e hora.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Ver agendamento: vai para DET-01</li>
       </ul>
     </div>
   </div>
 
 </div>
 
-<h3 class="flow-sub">Leitura</h3>
+<h2 class="flow-title">Novidades</h2>
 
 <div class="flow">
 
-  <div class="step" id="LEI-01">
-    <p class="step-name"><span class="step-id">LEI-01</span> Leitura</p>
+  <div class="step" id="NOV-01">
+    <p class="step-name"><span class="step-id">NOV-01</span> Novidades</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
     <div class="phone phone-flush">
-      <div class="top-flush">
-      <div class="bar"><div class="arrow">←</div><p class="bar-title">Leituras</p></div>
+      <div class="dash-header">
+        <p class="dash-name dash-title">Novidades</p>
+        <div class="head-icon"><i data-lucide="bell"></i></div>
       </div>
       <div class="dash-scroll">
-        <div class="box read-hero">Imagem</div>
+      <div class="section section-bleed">
+        <div class="section-head"><p class="section-title">Em destaque</p></div>
+        <div class="read-row">
+          <div class="read-card">
+            <img class="box read-image cover" src="img-modelos/leitura-skincare.jpg" alt="Rotina de skincare">
+            <div class="read-body">
+              <p class="t-sm">Cuidados</p>
+              <p class="label">Rotina de skincare pós-procedimento</p>
+              <p class="t-sm">3 min de leitura</p>
+            </div>
+          </div>
+          <div class="read-card">
+            <img class="box read-image cover" src="img-modelos/leitura-skincare.jpg" alt="Rotina de skincare">
+            <div class="read-body">
+              <p class="t-sm">Cuidados</p>
+              <p class="label">Rotina de skincare pós-procedimento</p>
+              <p class="t-sm">3 min de leitura</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section section-last">
+        <p class="section-title">Todas as leituras</p>
+        <div class="read-list">
+          <div class="read-card read-card-full">
+            <img class="box read-image cover" src="img-modelos/leitura-skincare.jpg" alt="Rotina de skincare">
+            <div class="read-body">
+              <p class="t-sm">Cuidados</p>
+              <p class="label">Rotina de skincare pós-procedimento</p>
+              <p class="t-sm">3 min de leitura</p>
+            </div>
+          </div>
+          <div class="read-card read-card-full">
+            <img class="box read-image cover" src="img-modelos/leitura-skincare.jpg" alt="Rotina de skincare">
+            <div class="read-body">
+              <p class="t-sm">Cuidados</p>
+              <p class="label">Rotina de skincare pós-procedimento</p>
+              <p class="t-sm">3 min de leitura</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="bottom-bar">
+        <div class="bar-item bar-item-on"><i data-lucide="house"></i><p class="bar-label">Início</p></div>
+        <div class="bar-item"><i data-lucide="calendar-days"></i><p class="bar-label">Agenda</p></div>
+        <div class="bar-item"><div class="bar-plus"><i data-lucide="plus"></i></div></div>
+        <div class="bar-item"><i data-lucide="heart-pulse"></i><p class="bar-label">HD Vita</p></div>
+        <div class="bar-item"><i data-lucide="circle-user"></i><p class="bar-label">Perfil</p></div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Reúne as leituras da clínica: carrossel de destaques e lista completa. Abre por "Ver todas" na dashboard.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Deslizar os destaques</li>
+        <li>Abrir uma leitura: vai para LEI-01</li>
+        <li>Sino: ver notificações (tela ainda não existe)</li>
+        <li>Barra inferior: muda de módulo</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="LEI-01">
+    <p class="step-name"><span class="step-id">LEI-01</span> Leitura</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone phone-flush">
+      <div class="top-flush">
+      <div class="bar"><div class="arrow"><i data-lucide="arrow-left"></i></div><p class="bar-title">Leituras</p></div>
+      </div>
+      <div class="dash-scroll">
+        <img class="box read-hero cover" src="img-modelos/leitura-skincare.jpg" alt="Rotina de skincare">
         <div class="section section-last">
           <p class="t-sm">Cuidados</p>
           <p class="h">Rotina de skincare pós-procedimento</p>
@@ -871,7 +1927,7 @@
         <div class="line"></div>
         <div class="line line-short"></div>
           </div>
-          <div class="box read-inline">Imagem</div>
+          <img class="box read-inline cover" src="img-modelos/leitura-produtos.jpg" alt="Produtos de skincare">
           <div class="desc">
         <div class="line"></div>
         <div class="line"></div>
@@ -885,18 +1941,299 @@
         </div>
       </div>
     </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar"></div>
+    </div>
     <div class="note">
       <p class="note-title">O que é</p>
       <p class="note-text">Abre ao clicar numa leitura. Artigo estilo blog, com scroll por dentro.</p>
       <p class="note-title">O que o utilizador pode fazer</p>
       <ul class="note-list">
         <li>Ler o artigo</li>
-        <li>Voltar: vai para DAS-01</li>
+        <li>Voltar: vai para NOV-01 ou DAS-01, conforme a origem</li>
       </ul>
     </div>
   </div>
 
 </div>
 
+<h2 class="flow-title">HD Vita</h2>
+
+<div class="flow">
+
+  <div class="step" id="VIT-01">
+    <p class="step-name"><span class="step-id">VIT-01</span> HD Vita</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone phone-flush">
+      <div class="dash-header">
+        <p class="dash-name dash-title">HD Vita</p>
+        <div class="head-icon"><i data-lucide="bell"></i></div>
+      </div>
+      <div class="dash-scroll">
+      <div class="section">
+        <p class="section-title">Protocolos e planos</p>
+        <div class="vita-grid">
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/emagrecimento" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-emagrecimento.jpg" alt="Protocolo de Emagrecimento">
+            <div class="read-body">
+              <p class="label">Protocolo de Emagrecimento</p>
+              <p class="t-sm">29€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/plano-alimentar" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-plano-alimentar.jpg" alt="Plano Alimentar">
+            <div class="read-body">
+              <p class="label">Plano Alimentar</p>
+              <p class="t-sm">19€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/plano-treino" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-treino.jpg" alt="Plano de Treino">
+            <div class="read-body">
+              <p class="label">Plano de Treino</p>
+              <p class="t-sm">19€</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Consultas</p>
+        <div class="vita-grid">
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/consulta?id=renovacao" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-receita.jpg" alt="Renovação de Receita Médica">
+            <div class="read-body">
+              <p class="label">Renovação de Receita Médica</p>
+              <p class="t-sm">19€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/consulta?id=clinicaGeral" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-clinica-geral.jpg" alt="Consulta Clínica Geral Online">
+            <div class="read-body">
+              <p class="label">Consulta Clínica Geral Online</p>
+              <p class="t-sm">40€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/consulta?id=atestado" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-atestado.jpg" alt="Atestado / Relatório Médico">
+            <div class="read-body">
+              <p class="label">Atestado / Relatório Médico</p>
+              <p class="t-sm">40€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/emagrecimento" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-consulta-emagrecimento.jpg" alt="Consulta de Emagrecimento">
+            <div class="read-body">
+              <p class="label">Consulta de Emagrecimento</p>
+              <p class="t-sm">160€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/consulta?id=hormonoterapia" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-hormonoterapia.jpg" alt="Consulta de Hormonoterapia">
+            <div class="read-body">
+              <p class="label">Consulta de Hormonoterapia</p>
+              <p class="t-sm">170€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/longevidade" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-longevidade.jpg" alt="Consulta Longevidade">
+            <div class="read-body">
+              <p class="label">Consulta Longevidade</p>
+              <p class="t-sm">170€</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="section section-last">
+        <p class="section-title">Exames</p>
+        <div class="vita-grid">
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/longevidade" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-checkup.jpg" alt="Check-up Geral Basic">
+            <div class="read-body">
+              <p class="label">Check-up Geral Basic</p>
+              <p class="t-sm">19€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/longevidade" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-cognitivo.jpg" alt="Perfil Cognitivo / Neuroprotecção">
+            <div class="read-body">
+              <p class="label">Perfil Cognitivo / Neuroprotecção</p>
+              <p class="t-sm">19€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/longevidade" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-metabolico.jpg" alt="Pacote Metabólico">
+            <div class="read-body">
+              <p class="label">Pacote Metabólico</p>
+              <p class="t-sm">29€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/longevidade" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-hormonal.jpg" alt="Pacote Hormonal">
+            <div class="read-body">
+              <p class="label">Pacote Hormonal</p>
+              <p class="t-sm">29€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/longevidade" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-nutricional.jpg" alt="Perfil Nutricional / Deficiências">
+            <div class="read-body">
+              <p class="label">Perfil Nutricional / Deficiências</p>
+              <p class="t-sm">29€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/longevidade" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-oncologico.jpg" alt="Perfil Oncológico / Preventivo">
+            <div class="read-body">
+              <p class="label">Perfil Oncológico / Preventivo</p>
+              <p class="t-sm">29€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/longevidade" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-cardiovascular.jpg" alt="Pacote Cardiovascular">
+            <div class="read-body">
+              <p class="label">Pacote Cardiovascular</p>
+              <p class="t-sm">39€</p>
+            </div>
+          </a>
+          <a class="read-card proc-card vita-card" href="https://hdvita.com/longevidade" target="_blank" rel="noopener">
+            <img class="box proc-image cover" src="img-modelos/vita-premium.jpg" alt="Perfil Premium (all-in-one)">
+            <div class="read-body">
+              <p class="label">Perfil Premium (all-in-one)</p>
+              <p class="t-sm">69€</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="bottom-bar">
+        <div class="bar-item"><i data-lucide="house"></i><p class="bar-label">Início</p></div>
+        <div class="bar-item"><i data-lucide="calendar-days"></i><p class="bar-label">Agenda</p></div>
+        <div class="bar-item"><div class="bar-plus"><i data-lucide="plus"></i></div></div>
+        <div class="bar-item bar-item-on"><i data-lucide="heart-pulse"></i><p class="bar-label">HD Vita</p></div>
+        <div class="bar-item"><i data-lucide="circle-user"></i><p class="bar-label">Perfil</p></div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Módulo com os 17 serviços da HD Vita, em duas colunas: protocolos e planos, consultas e exames. O conteúdo faz scroll por dentro. Preços da página pública /precos.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Abrir um serviço: abre a página dele em hdvita.com, fora do app</li>
+        <li>Sino: ver notificações (tela ainda não existe)</li>
+        <li>Barra inferior: muda de módulo</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<h2 class="flow-title">Perfil</h2>
+
+<div class="flow">
+
+  <div class="step" id="PER-01">
+    <p class="step-name"><span class="step-id">PER-01</span> Perfil</p>
+    <div class="device">
+      <img class="device-frame" src="mockups/iphone-15-pro.png" alt="">
+    <div class="phone phone-flush">
+      <div class="dash-header">
+        <img class="box avatar cover" src="img-modelos/avatar.jpg" alt="Foto de perfil">
+        <div class="dash-user"><p class="dash-name">Fulano Silva</p><p class="dash-hello">nome@email.com</p></div>
+        <div class="head-icon"><i data-lucide="bell"></i></div>
+      </div>
+      <div class="dash-scroll">
+      <div class="section">
+        <p class="section-title">A minha conta</p>
+        <div class="appt">
+          <div class="icon"><i data-lucide="user-round"></i></div>
+          <p class="label grow">Dados pessoais</p>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <div class="icon"><i data-lucide="map-pin"></i></div>
+          <p class="label grow">Endereço</p>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <div class="icon"><i data-lucide="key-round"></i></div>
+          <p class="label grow">Password</p>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <div class="icon"><i data-lucide="shield-check"></i></div>
+          <p class="label grow">Consentimentos</p>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Ajuda</p>
+        <div class="appt">
+          <div class="icon"><i data-lucide="message-circle"></i></div>
+          <p class="label grow">Suporte</p>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <div class="icon"><i data-lucide="info"></i></div>
+          <p class="label grow">Sobre a HD Clinic</p>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+      </div>
+
+      <div class="section section-last">
+        <div class="appt">
+          <div class="icon"><i data-lucide="log-out"></i></div>
+          <p class="label grow">Terminar sessão</p>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+        <div class="appt">
+          <div class="icon"><i data-lucide="trash-2"></i></div>
+          <p class="label grow">Apagar conta</p>
+          <div class="chevron"><i data-lucide="chevron-right"></i></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="bottom-bar">
+        <div class="bar-item"><i data-lucide="house"></i><p class="bar-label">Início</p></div>
+        <div class="bar-item"><i data-lucide="calendar-days"></i><p class="bar-label">Agenda</p></div>
+        <div class="bar-item"><div class="bar-plus"><i data-lucide="plus"></i></div></div>
+        <div class="bar-item"><i data-lucide="heart-pulse"></i><p class="bar-label">HD Vita</p></div>
+        <div class="bar-item bar-item-on"><i data-lucide="circle-user"></i><p class="bar-label">Perfil</p></div>
+      </div>
+    </div>
+      <div class="island"></div>
+      <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
+      <div class="home-bar home-bar-light"></div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Conta do cliente: dados, ajuda e saída.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Dados pessoais, Endereço, Password e Consentimentos (telas ainda não existem)</li>
+        <li>Suporte: abre o WhatsApp da clínica</li>
+        <li>Sobre a HD Clinic (tela ainda não existe)</li>
+        <li>Terminar sessão: vai para ENT-01</li>
+        <li>Apagar conta (tela ainda não existe)</li>
+        <li>Barra inferior: muda de módulo</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
 </body>
 </html>
