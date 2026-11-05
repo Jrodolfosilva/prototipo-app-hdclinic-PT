@@ -286,6 +286,17 @@
   .options { padding: 0 12px; }
   .read-row { margin: -8px 0; padding: 8px 16px 8px 0; }
   .line { background: #E4E4E4; }
+
+  .dash-header { border-radius: 0 0 40px 40px; }
+
+  /* Sucesso e falha: área principal colorida */
+  .sheet-ok { background: #157A29; }
+  .sheet-fail { background: #B3261E; }
+  .sheet-ok .h, .sheet-ok .t, .sheet-ok .link, .sheet-fail .h, .sheet-fail .t, .sheet-fail .link { color: #FFFFFF; }
+  .sheet-ok .ok-gold, .sheet-fail .fail { background: transparent; border: 3px solid #FFFFFF; color: #FFFFFF; }
+  .sheet-ok .lucide, .sheet-fail .lucide { width: 40px; height: 40px; }
+  .sheet-ok .btn { background: #FFFFFF; color: #157A29; }
+  .sheet-fail .btn { background: #FFFFFF; color: #B3261E; }
 </style>
 </head>
 <body>
@@ -515,7 +526,7 @@
       <div class="top-dark">
         <img class="logo-bar-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic">
       </div>
-      <div class="sheet">
+      <div class="sheet sheet-ok">
       <div class="body center">
         <div class="ok-gold"><i data-lucide="check"></i></div>
         <p class="h text-center">Senha alterada</p>
@@ -525,7 +536,7 @@
     </div>
       <div class="island"></div>
       <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
-      <div class="home-bar"></div>
+      <div class="home-bar home-bar-light"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -793,7 +804,7 @@
       <div class="top-dark">
         <img class="logo-bar-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic">
       </div>
-      <div class="sheet">
+      <div class="sheet sheet-ok">
       <div class="body center">
         <div class="ok-gold"><i data-lucide="check"></i></div>
         <p class="h text-center">Conta criada</p>
@@ -803,7 +814,7 @@
     </div>
       <div class="island"></div>
       <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
-      <div class="home-bar"></div>
+      <div class="home-bar home-bar-light"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -1416,7 +1427,7 @@
       <div class="top-dark">
         <img class="logo-bar-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic">
       </div>
-      <div class="sheet">
+      <div class="sheet sheet-ok">
       <div class="body center">
         <div class="ok-gold"><i data-lucide="check"></i></div>
         <p class="h text-center">Sessão agendada</p>
@@ -1428,7 +1439,7 @@
     </div>
       <div class="island"></div>
       <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
-      <div class="home-bar"></div>
+      <div class="home-bar home-bar-light"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -1450,7 +1461,7 @@
       <div class="bar"><div class="arrow"><i data-lucide="x"></i></div><p class="bar-title">Stripe</p></div>
         <p class="h">Pagamento não concluído</p>
       </div>
-      <div class="sheet">
+      <div class="sheet sheet-fail">
       <div class="body center">
         <div class="fail"><i data-lucide="x"></i></div>
         <p class="t text-center">Não foi possível concluir o pagamento. O agendamento ainda não foi confirmado.</p>
@@ -1461,7 +1472,7 @@
     </div>
       <div class="island"></div>
       <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
-      <div class="home-bar"></div>
+      <div class="home-bar home-bar-light"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -1706,7 +1717,7 @@
       <div class="top-dark">
         <img class="logo-bar-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic">
       </div>
-      <div class="sheet">
+      <div class="sheet sheet-ok">
       <div class="body center">
         <div class="ok-gold"><i data-lucide="check"></i></div>
         <p class="h text-center">Agendamento cancelado</p>
@@ -1717,7 +1728,7 @@
     </div>
       <div class="island"></div>
       <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
-      <div class="home-bar"></div>
+      <div class="home-bar home-bar-light"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
@@ -1783,7 +1794,7 @@
       <div class="top-dark">
         <img class="logo-bar-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic">
       </div>
-      <div class="sheet">
+      <div class="sheet sheet-ok">
       <div class="body center">
         <div class="ok-gold"><i data-lucide="check"></i></div>
         <p class="h text-center">Agendamento reagendado</p>
@@ -1794,7 +1805,7 @@
     </div>
       <div class="island"></div>
       <div class="status"><span>9:41</span><div class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div></div>
-      <div class="home-bar"></div>
+      <div class="home-bar home-bar-light"></div>
     </div>
     <div class="note">
       <p class="note-title">O que é</p>
