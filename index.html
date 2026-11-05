@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HD Clinic App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #F2F2F2; color: #2E2E2E; font-family: Manrope, sans-serif; padding: 32px 24px; }
+  .title { font-size: 32px; line-height: 40px; font-weight: 700; margin-bottom: 32px; }
+  .flow-title { font-size: 20px; line-height: 28px; font-weight: 600; margin-bottom: 16px; }
+
+  .flow-sub { font-size: 16px; line-height: 24px; font-weight: 600; color: #6B6B6B; margin-bottom: 12px; }
+
+  .flow { display: flex; gap: 32px; overflow-x: auto; padding: 4px 4px 16px; margin-bottom: 32px; zoom: .7; }
+  .step { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; width: 390px; }
+  .step-name { font-size: 18px; line-height: 26px; font-weight: 600; }
+
+  /* Telas em tamanho real: 390 x 844 */
+  .phone { display: flex; flex-direction: column; width: 390px; height: 844px; padding: 47px 16px 34px; gap: 16px; background: #FFFFFF; border: 2px solid #2E2E2E; border-radius: 40px; overflow: hidden; }
+  .phone-black { background: #050505; }
+  .logo-img { width: 240px; height: 58px; }
+  .bar { display: flex; flex-direction: row; align-items: center; height: 56px; gap: 12px; flex-shrink: 0; }
+  .back { width: 24px; height: 24px; border: 2px solid #A8A8A8; border-radius: 4px; }
+  .body { display: flex; flex-direction: column; flex: 1; gap: 32px; }
+  .center { justify-content: center; align-items: center; }
+  .h { font-size: 32px; line-height: 40px; font-weight: 700; }
+  .t { font-size: 18px; line-height: 26px; color: #6B6B6B; }
+  .label { font-size: 16px; line-height: 24px; font-weight: 600; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .input { display: flex; align-items: center; height: 60px; padding: 0 16px; border: 2px solid #A8A8A8; border-radius: 12px; font-size: 18px; color: #6B6B6B; }
+  .btn { display: flex; align-items: center; justify-content: center; height: 60px; flex-shrink: 0; border-radius: 12px; background: #2E2E2E; color: #FFFFFF; font-size: 18px; font-weight: 600; }
+  .btn-line { background: #FFFFFF; color: #2E2E2E; border: 2px solid #2E2E2E; }
+  .link { display: flex; align-items: center; justify-content: center; height: 48px; flex-shrink: 0; font-size: 16px; font-weight: 600; }
+  .box { display: flex; align-items: center; justify-content: center; background: #E8E8E8; border-radius: 12px; font-size: 14px; color: #6B6B6B; }
+  .logo { width: 120px; height: 88px; }
+  .image { width: 100%; height: 320px; }
+  .ok { width: 80px; height: 80px; border-radius: 999px; }
+  .check { display: flex; flex-direction: row; gap: 12px; }
+  .check-box { width: 24px; height: 24px; flex-shrink: 0; border: 2px solid #A8A8A8; border-radius: 4px; }
+  .item { display: flex; flex-direction: row; align-items: flex-start; gap: 16px; }
+  .icon { width: 56px; height: 56px; flex-shrink: 0; }
+  .item-text { display: flex; flex-direction: column; flex: 1; gap: 4px; }
+  .etapa { display: flex; flex-direction: column; gap: 8px; }
+  .segs { display: flex; flex-direction: row; gap: 4px; }
+  .seg { flex: 1; height: 4px; border-radius: 999px; background: #E8E8E8; }
+  .seg-on { background: #2E2E2E; }
+  .arrow { width: 32px; flex-shrink: 0; font-size: 28px; line-height: 32px; font-weight: 600; }
+  .bar-title { font-size: 20px; line-height: 28px; font-weight: 700; }
+  .bar-center { display: flex; flex: 1; justify-content: center; }
+  .logo-bar { width: 120px; height: 40px; }
+  .step-id { padding: 2px 8px; border-radius: 4px; background: #2E2E2E; color: #FFFFFF; font-weight: 700; }
+  .note { display: flex; flex-direction: column; gap: 8px; padding: 16px; background: #FFFFFF; border: 2px solid #E8E8E8; border-radius: 12px; }
+  .note-title { font-size: 16px; line-height: 24px; font-weight: 700; }
+  .note-text, .note-list { font-size: 18px; line-height: 26px; color: #2E2E2E; }
+  .note-list { padding-left: 24px; }
+  .dots { display: flex; flex-direction: row; justify-content: center; gap: 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 999px; background: #E8E8E8; }
+  .dot-on { background: #2E2E2E; }
+  .forgot { font-size: 16px; line-height: 24px; font-weight: 600; text-align: right; }
+  .phone-flush { padding: 0; gap: 0; }
+  .dash-header { display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 63px 16px 24px; background: #050505; }
+  .avatar { width: 64px; height: 64px; flex-shrink: 0; border-radius: 999px; }
+  .dash-name { flex: 1; font-size: 22px; line-height: 28px; font-weight: 700; color: #FFFFFF; }
+  .section { display: flex; flex-direction: column; gap: 16px; padding: 24px 16px 0; }
+  .section-last { padding-bottom: 24px; }
+  .section-title { font-size: 22px; line-height: 28px; font-weight: 700; }
+  .head-icon { width: 40px; height: 40px; flex-shrink: 0; font-size: 12px; }
+  .t-sm { font-size: 16px; line-height: 24px; color: #6B6B6B; }
+  .section-head { display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding-right: 16px; }
+  .see-all { font-size: 16px; line-height: 24px; font-weight: 600; }
+  .section-bleed { padding-right: 0; }
+  .highlight { display: flex; flex-direction: row; gap: 12px; padding: 16px; border: 2px solid #E8E8E8; border-radius: 16px; }
+  .highlight-text { display: flex; flex-direction: column; flex: 1; gap: 8px; }
+  .highlight-image { width: 104px; flex-shrink: 0; }
+  .btn-small { height: 48px; margin-top: 8px; font-size: 16px; }
+  .appt { display: flex; flex-direction: row; align-items: center; gap: 12px; }
+  .date-box { flex-direction: column; width: 56px; height: 64px; flex-shrink: 0; }
+  .date-month { font-size: 14px; line-height: 20px; font-weight: 600; }
+  .date-day { font-size: 20px; line-height: 24px; font-weight: 700; color: #2E2E2E; }
+  .chevron { flex-shrink: 0; font-size: 28px; line-height: 32px; color: #6B6B6B; }
+  .read-row { display: flex; flex-direction: row; gap: 12px; overflow-x: auto; scrollbar-width: none; }
+  .read-card { display: flex; flex-direction: column; width: 250px; flex-shrink: 0; border: 2px solid #E8E8E8; border-radius: 12px; overflow: hidden; }
+  .read-image { height: 140px; border-radius: 0; }
+  .read-body { display: flex; flex-direction: column; gap: 4px; padding: 12px; }
+  .dash-scroll { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; }
+  .dash-header { flex-shrink: 0; }
+  .bottom-bar { display: flex; flex-direction: row; align-items: center; height: 90px; flex-shrink: 0; padding-bottom: 34px; border-top: 2px solid #E8E8E8; background: #FFFFFF; }
+  .bar-item { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; gap: 2px; color: #6B6B6B; }
+  .bar-item-on { color: #2E2E2E; }
+  .bar-icon { width: 24px; height: 24px; border-radius: 4px; background: #E8E8E8; }
+  .bar-item-on .bar-icon { background: #2E2E2E; }
+  .bar-label { font-size: 12px; line-height: 16px; font-weight: 600; }
+  .bar-plus { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 999px; background: #2E2E2E; color: #FFFFFF; font-size: 28px; line-height: 28px; font-weight: 600; }
+  .body-tight { gap: 24px; }
+  .calendar { display: flex; flex-direction: column; gap: 4px; }
+  .cal-row { display: flex; flex-direction: row; }
+  .cal-head, .cal-day { display: flex; align-items: center; justify-content: center; flex: 1; height: 44px; font-size: 16px; font-weight: 600; }
+  .cal-head { height: 28px; font-size: 14px; color: #6B6B6B; }
+  .cal-off { color: #A8A8A8; }
+  .cal-on { background: #2E2E2E; border-radius: 999px; color: #FFFFFF; }
+  .slots-wrap { display: flex; flex-direction: column; gap: 8px; }
+  .slots { display: flex; flex-direction: row; gap: 8px; }
+  .slot { display: flex; align-items: center; justify-content: center; flex: 1; height: 48px; border: 2px solid #A8A8A8; border-radius: 12px; font-size: 16px; font-weight: 600; }
+  .slot-on { background: #2E2E2E; border-color: #2E2E2E; color: #FFFFFF; }
+  .info-list { display: flex; flex-direction: column; gap: 16px; }
+  .info-row { display: flex; flex-direction: column; gap: 2px; }
+  .desc { display: flex; flex-direction: column; gap: 12px; }
+  .line { height: 12px; border-radius: 4px; background: #E8E8E8; }
+  .line-short { width: 66%; }
+  .empty { display: flex; flex-direction: column; gap: 16px; padding: 16px; border: 2px solid #E8E8E8; border-radius: 12px; }
+  .cta-row { display: flex; flex-direction: row; gap: 12px; flex-shrink: 0; }
+  .cta-row .btn { flex: 1; }
+  .grow { flex: 1; }
+  .top-flush { flex-shrink: 0; padding: 47px 16px 8px; }
+  .read-hero { height: 220px; flex-shrink: 0; border-radius: 0; }
+  .read-inline { height: 180px; flex-shrink: 0; }
+  .text-center { text-align: center; }
+</style>
+</head>
+<body>
+
+<h1 class="title">Protótipo</h1>
+
+<h2 class="flow-title">Abertura</h2>
+
+<div class="flow">
+
+  <div class="step" id="ABE-01">
+    <p class="step-name"><span class="step-id">ABE-01</span> Tela de abertura</p>
+    <div class="phone phone-black">
+      <div class="body center">
+        <img class="logo-img" src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic">
+      </div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Primeira tela ao abrir o app. Mostra o logo enquanto o app carrega.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Nenhuma: segue sozinha para ENT-01</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<h2 class="flow-title">Autenticação</h2>
+
+<h3 class="flow-sub">Entrar</h3>
+
+<div class="flow">
+
+  <div class="step" id="ENT-01">
+    <p class="step-name"><span class="step-id">ENT-01</span> Boas-vindas</p>
+    <div class="phone">
+      <div class="body center">
+        <div class="box logo">Logo</div>
+        <div class="box image">Imagem</div>
+        <p class="h text-center">Tudo da clínica no seu telemóvel</p>
+        <div class="dots"><div class="dot dot-on"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+      <div class="btn">Entrar</div>
+      <div class="btn btn-line">Criar conta</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Apresenta o app a quem ainda não entrou. A imagem e o texto são um carrossel: mudam juntos a cada slide.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Deslizar para ver outro slide</li>
+        <li>Entrar: vai para ENT-02</li>
+        <li>Criar conta: vai para REG-01</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="ENT-02">
+    <p class="step-name"><span class="step-id">ENT-02</span> Entrar</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><div class="bar-center"><div class="box logo-bar">Logo</div></div><div class="arrow"></div></div>
+      <div class="body">
+        <p class="h">Entrar</p>
+        <div class="field"><p class="label">E-mail</p><div class="input"></div></div>
+        <div class="field">
+          <p class="label">Senha</p>
+          <div class="input"></div>
+          <p class="forgot">Esqueceu a senha? Recuperar</p>
+        </div>
+        <div class="btn">Entrar</div>
+      </div>
+      <div class="link">Criar conta</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Acesso de quem já tem conta.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Preencher e-mail e senha</li>
+        <li>Entrar: vai para DAS-01</li>
+        <li>Esqueceu a senha: vai para REC-01</li>
+        <li>Criar conta: vai para REG-01</li>
+        <li>Voltar: vai para ENT-01</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<h3 class="flow-sub">Recuperar senha</h3>
+
+<div class="flow">
+
+  <div class="step" id="REC-01">
+    <p class="step-name"><span class="step-id">REC-01</span> Indicar e-mail</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><p class="bar-title">Recuperar senha</p></div>
+      <div class="body">
+        <p class="h">Indique o seu e-mail</p>
+        <p class="t">Vamos enviar um código para recuperar a sua senha.</p>
+        <div class="field"><p class="label">E-mail</p><div class="input"></div></div>
+        <div class="btn">Enviar código</div>
+      </div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Início da recuperação. Pede o e-mail da conta.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Preencher o e-mail</li>
+        <li>Enviar código: vai para REC-02</li>
+        <li>Voltar: vai para ENT-02</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="REC-02">
+    <p class="step-name"><span class="step-id">REC-02</span> Código</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><p class="bar-title">Recuperar senha</p></div>
+      <div class="body">
+        <p class="h">Introduza o código</p>
+        <p class="t">Enviámos um código para o seu e-mail.</p>
+        <div class="field"><p class="label">Código</p><div class="input"></div></div>
+        <div class="link">Reenviar código</div>
+        <div class="btn">Validar</div>
+      </div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Confirma que o e-mail é do cliente.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Inserir o código recebido</li>
+        <li>Reenviar código</li>
+        <li>Validar: vai para REC-03</li>
+        <li>Voltar: vai para REC-01</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="REC-03">
+    <p class="step-name"><span class="step-id">REC-03</span> Nova senha</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><p class="bar-title">Recuperar senha</p></div>
+      <div class="body">
+        <p class="h">Crie uma nova senha</p>
+        <div class="field"><p class="label">Nova senha</p><div class="input"></div></div>
+        <div class="field"><p class="label">Confirmar nova senha</p><div class="input"></div></div>
+        <div class="btn">Guardar senha</div>
+      </div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Define a nova senha de acesso.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Preencher e confirmar a nova senha</li>
+        <li>Guardar senha: vai para REC-04</li>
+        <li>Voltar: vai para REC-02</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="REC-04">
+    <p class="step-name"><span class="step-id">REC-04</span> Senha alterada</p>
+    <div class="phone">
+      <div class="body center">
+        <div class="box ok">OK</div>
+        <p class="h text-center">Senha alterada</p>
+      </div>
+      <div class="btn">Ir para Entrar</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Confirma que a senha foi alterada.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Ir para Entrar: vai para ENT-02</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<h3 class="flow-sub">Criar conta</h3>
+
+<div class="flow">
+
+  <div class="step" id="REG-01">
+    <p class="step-name"><span class="step-id">REG-01</span> Como funciona</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><div class="bar-center"><div class="box logo-bar">Logo</div></div><div class="arrow"></div></div>
+      <div class="body">
+        <p class="h">Inicie o seu registo na HD Clinic</p>
+        <div class="item">
+          <div class="box icon"></div>
+          <div class="item-text"><p class="label">1. Registo de cliente</p><p class="t">Preencha os seus dados básicos.</p></div>
+        </div>
+        <div class="item">
+          <div class="box icon"></div>
+          <div class="item-text"><p class="label">2. Validar contactos</p><p class="t">Confirme o seu e-mail e telefone.</p></div>
+        </div>
+        <div class="item">
+          <div class="box icon"></div>
+          <div class="item-text"><p class="label">3. Política de consentimentos</p><p class="t">Leia e aceite as políticas.</p></div>
+        </div>
+        <div class="item">
+          <div class="box icon"></div>
+          <div class="item-text"><p class="label">4. Definir password</p><p class="t">Crie a sua password de acesso.</p></div>
+        </div>
+      </div>
+      <div class="btn">Iniciar registo</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Explica as 4 etapas do registo antes de começar.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Iniciar registo: vai para REG-02</li>
+        <li>Voltar: vai para ENT-01</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="REG-02">
+    <p class="step-name"><span class="step-id">REG-02</span> Dados pessoais</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><p class="bar-title">Registo de cliente</p></div>
+      <div class="body">
+        <div class="etapa">
+          <p class="label">Etapa 1 de 4: Registo de cliente</p>
+          <div class="segs"><div class="seg seg-on"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+        </div>
+        <p class="h">Os seus dados</p>
+        <div class="field"><p class="label">Nome completo</p><div class="input"></div></div>
+        <div class="field"><p class="label">Telefone</p><div class="input">+351</div></div>
+        <div class="field"><p class="label">E-mail</p><div class="input"></div></div>
+      </div>
+      <div class="btn">Continuar</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Etapa 1 do registo. Pede os dados básicos do cliente.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Preencher nome, telefone e e-mail</li>
+        <li>Continuar: vai para REG-03</li>
+        <li>Voltar: vai para REG-01</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="REG-03">
+    <p class="step-name"><span class="step-id">REG-03</span> Endereço</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><p class="bar-title">Registo de cliente</p></div>
+      <div class="body">
+        <div class="etapa">
+          <p class="label">Etapa 1 de 4: Registo de cliente</p>
+          <div class="segs"><div class="seg seg-on"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+        </div>
+        <p class="h">O seu endereço</p>
+        <div class="field"><p class="label">Morada</p><div class="input"></div></div>
+        <div class="field"><p class="label">Código postal</p><div class="input"></div></div>
+        <div class="field"><p class="label">Cidade</p><div class="input"></div></div>
+      </div>
+      <div class="btn">Continuar</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Etapa 1 do registo. Pede o endereço do cliente.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Preencher morada, código postal e cidade</li>
+        <li>Continuar: vai para REG-04</li>
+        <li>Voltar: vai para REG-02</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="REG-04">
+    <p class="step-name"><span class="step-id">REG-04</span> Validar contactos</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><p class="bar-title">Validar contactos</p></div>
+      <div class="body">
+        <div class="etapa">
+          <p class="label">Etapa 2 de 4: Validar contactos</p>
+          <div class="segs"><div class="seg seg-on"></div><div class="seg seg-on"></div><div class="seg"></div><div class="seg"></div></div>
+        </div>
+        <p class="h">Confirme os seus contactos</p>
+        <p class="t">Enviámos um código para o seu e-mail e outro para o seu telefone.</p>
+        <div class="field"><p class="label">Código do e-mail</p><div class="input"></div></div>
+        <div class="field"><p class="label">Código do telefone</p><div class="input"></div></div>
+        <div class="link">Reenviar códigos</div>
+      </div>
+      <div class="btn">Validar</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Etapa 2 do registo. Confirma que o e-mail e o telefone são do cliente.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Inserir os dois códigos recebidos</li>
+        <li>Reenviar códigos</li>
+        <li>Validar: vai para REG-05</li>
+        <li>Voltar: vai para REG-03</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="REG-05">
+    <p class="step-name"><span class="step-id">REG-05</span> Política de consentimentos</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><p class="bar-title">Política de consentimentos</p></div>
+      <div class="body">
+        <div class="etapa">
+          <p class="label">Etapa 3 de 4: Política de consentimentos</p>
+          <div class="segs"><div class="seg seg-on"></div><div class="seg seg-on"></div><div class="seg seg-on"></div><div class="seg"></div></div>
+        </div>
+        <p class="h">Consentimentos</p>
+        <div class="check"><div class="check-box"></div><p class="label">Aceito os Termos e Condições</p></div>
+        <div class="check"><div class="check-box"></div><p class="label">Aceito a Política de Privacidade</p></div>
+        <div class="check"><div class="check-box"></div><p class="label">Autorizo o tratamento dos meus dados de saúde</p></div>
+        <div class="check"><div class="check-box"></div><p class="label">Quero receber novidades (opcional)</p></div>
+      </div>
+      <div class="btn">Aceitar e continuar</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Etapa 3 do registo. Regista o que o cliente aceita e autoriza.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Marcar os consentimentos</li>
+        <li>Marcar novidades é opcional</li>
+        <li>Aceitar e continuar: vai para REG-06</li>
+        <li>Voltar: vai para REG-04</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="REG-06">
+    <p class="step-name"><span class="step-id">REG-06</span> Definir password</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><p class="bar-title">Definir password</p></div>
+      <div class="body">
+        <div class="etapa">
+          <p class="label">Etapa 4 de 4: Definir password</p>
+          <div class="segs"><div class="seg seg-on"></div><div class="seg seg-on"></div><div class="seg seg-on"></div><div class="seg seg-on"></div></div>
+        </div>
+        <p class="h">Defina a sua password</p>
+        <div class="field"><p class="label">Password</p><div class="input"></div></div>
+        <div class="field"><p class="label">Confirmar password</p><div class="input"></div></div>
+      </div>
+      <div class="btn">Criar conta</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Etapa 4 do registo. Cria a password de acesso.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Preencher e confirmar a password</li>
+        <li>Criar conta: vai para REG-07</li>
+        <li>Voltar: vai para REG-05</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="REG-07">
+    <p class="step-name"><span class="step-id">REG-07</span> Conta criada</p>
+    <div class="phone">
+      <div class="body center">
+        <div class="box ok">OK</div>
+        <p class="h text-center">Conta criada</p>
+      </div>
+      <div class="btn">Ir para o início</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Confirma que o registo terminou.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Ir para o início: vai para DAS-01</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<h2 class="flow-title">Dashboard</h2>
+
+<h3 class="flow-sub">Base</h3>
+
+<div class="flow">
+
+  <div class="step" id="DAS-01">
+    <p class="step-name"><span class="step-id">DAS-01</span> Dashboard</p>
+    <div class="phone phone-flush">
+      <div class="dash-header">
+        <div class="box avatar">Foto</div>
+        <p class="dash-name">Olá, Fulano</p>
+        <div class="box head-icon">Sino</div>
+        <div class="box head-icon">Sair</div>
+      </div>
+
+      <div class="dash-scroll">
+      <div class="section">
+        <div class="highlight">
+          <div class="highlight-text">
+            <p class="section-title">O seu plano</p>
+            <p class="label">Plano de tratamento: 3 de 5 sessões concluídas</p>
+            <p class="t-sm">Falta uma sessão para completar a fase atual.</p>
+            <div class="btn btn-small">Agendar sessão</div>
+          </div>
+          <div class="box highlight-image">Imagem</div>
+        </div>
+        <div class="dots"><div class="dot dot-on"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Próximos agendamentos</p>
+        <div class="appt">
+          <div class="box date-box"><span class="date-month">Dez</span><span class="date-day">02</span></div>
+          <div class="item-text"><p class="label">Bioestimulador de Colagénio</p><p class="t-sm">10:00 · Dr. Rodrigo Tavares</p></div>
+          <div class="chevron">›</div>
+        </div>
+        <div class="appt">
+          <div class="box date-box"><span class="date-month">Dez</span><span class="date-day">02</span></div>
+          <div class="item-text"><p class="label">Bioestimulador de Colagénio</p><p class="t-sm">10:00 · Dr. Rodrigo Tavares</p></div>
+          <div class="chevron">›</div>
+        </div>
+      </div>
+
+      <div class="section section-bleed section-last">
+        <div class="section-head"><p class="section-title">Leituras para si</p><p class="see-all">Ver todas</p></div>
+        <div class="read-row">
+          <div class="read-card">
+            <div class="box read-image">Imagem</div>
+            <div class="read-body">
+              <p class="t-sm">Cuidados</p>
+              <p class="label">Rotina de skincare pós-procedimento</p>
+              <p class="t-sm">3 min de leitura</p>
+            </div>
+          </div>
+          <div class="read-card">
+            <div class="box read-image">Imagem</div>
+            <div class="read-body">
+              <p class="t-sm">Cuidados</p>
+              <p class="label">Rotina de skincare pós-procedimento</p>
+              <p class="t-sm">3 min de leitura</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="bottom-bar">
+        <div class="bar-item bar-item-on"><div class="bar-icon"></div><p class="bar-label">Home</p></div>
+        <div class="bar-item"><div class="bar-icon"></div><p class="bar-label">Serviços</p></div>
+        <div class="bar-item"><div class="bar-plus">+</div></div>
+        <div class="bar-item"><div class="bar-icon"></div><p class="bar-label">Novidades</p></div>
+      </div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Tela principal do app depois de entrar. Mostra destaques, próximos agendamentos e leituras. O conteúdo faz scroll por dentro e a barra inferior fica fixa.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Sino: ver notificações (tela ainda não existe)</li>
+        <li>Sair: vai para ENT-01</li>
+        <li>Deslizar os destaques</li>
+        <li>Agendar sessão: vai para AGE-01</li>
+        <li>Abrir um agendamento: vai para DET-01</li>
+        <li>Deslizar as leituras</li>
+        <li>Abrir uma leitura: vai para LEI-01</li>
+        <li>Ver todas as leituras (tela ainda não existe)</li>
+        <li>Home: fica em DAS-01</li>
+        <li>Serviços (tela ainda não existe)</li>
+        <li>Botão +: vai para AGE-01</li>
+        <li>Novidades (tela ainda não existe)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="DAS-02">
+    <p class="step-name"><span class="step-id">DAS-02</span> Dashboard sem agendamentos</p>
+    <div class="phone phone-flush">
+      <div class="dash-header">
+        <div class="box avatar">Foto</div>
+        <p class="dash-name">Olá, Fulano</p>
+        <div class="box head-icon">Sino</div>
+        <div class="box head-icon">Sair</div>
+      </div>
+
+      <div class="dash-scroll">
+      <div class="section">
+        <div class="highlight">
+          <div class="highlight-text">
+            <p class="section-title">O seu plano</p>
+            <p class="label">Plano de tratamento: 3 de 5 sessões concluídas</p>
+            <p class="t-sm">Falta uma sessão para completar a fase atual.</p>
+            <div class="btn btn-small">Agendar sessão</div>
+          </div>
+          <div class="box highlight-image">Imagem</div>
+        </div>
+        <div class="dots"><div class="dot dot-on"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Próximos agendamentos</p>
+        <div class="empty">
+          <p class="t text-center">Ainda não tem agendamentos.</p>
+          <div class="cta-row">
+            <div class="btn">Agendar</div>
+            <div class="btn btn-line">Suporte</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section section-bleed section-last">
+        <div class="section-head"><p class="section-title">Leituras para si</p><p class="see-all">Ver todas</p></div>
+        <div class="read-row">
+          <div class="read-card">
+            <div class="box read-image">Imagem</div>
+            <div class="read-body">
+              <p class="t-sm">Cuidados</p>
+              <p class="label">Rotina de skincare pós-procedimento</p>
+              <p class="t-sm">3 min de leitura</p>
+            </div>
+          </div>
+          <div class="read-card">
+            <div class="box read-image">Imagem</div>
+            <div class="read-body">
+              <p class="t-sm">Cuidados</p>
+              <p class="label">Rotina de skincare pós-procedimento</p>
+              <p class="t-sm">3 min de leitura</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="bottom-bar">
+        <div class="bar-item bar-item-on"><div class="bar-icon"></div><p class="bar-label">Home</p></div>
+        <div class="bar-item"><div class="bar-icon"></div><p class="bar-label">Serviços</p></div>
+        <div class="bar-item"><div class="bar-plus">+</div></div>
+        <div class="bar-item"><div class="bar-icon"></div><p class="bar-label">Novidades</p></div>
+      </div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Mesma tela de DAS-01, para quem não tem agendamentos. No lugar da lista aparecem os botões Agendar e Suporte.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Agendar: vai para AGE-01</li>
+        <li>Suporte: contactar a clínica (tela ainda não existe)</li>
+        <li>Restantes ações iguais a DAS-01</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<h3 class="flow-sub">Agendar sessão</h3>
+
+<div class="flow">
+
+  <div class="step" id="AGE-01">
+    <p class="step-name"><span class="step-id">AGE-01</span> Data e horário</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><p class="bar-title">Agendar sessão</p></div>
+      <div class="body body-tight">
+        <div class="calendar">
+          <p class="label">Dezembro 2026</p>
+          <div class="cal-row"><div class="cal-head">S</div><div class="cal-head">T</div><div class="cal-head">Q</div><div class="cal-head">Q</div><div class="cal-head">S</div><div class="cal-head">S</div><div class="cal-head">D</div></div>
+          <div class="cal-row"><div class="cal-day"></div><div class="cal-day">1</div><div class="cal-day cal-on">2</div><div class="cal-day">3</div><div class="cal-day">4</div><div class="cal-day cal-off">5</div><div class="cal-day cal-off">6</div></div>
+          <div class="cal-row"><div class="cal-day">7</div><div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day cal-off">12</div><div class="cal-day cal-off">13</div></div>
+          <div class="cal-row"><div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day cal-off">19</div><div class="cal-day cal-off">20</div></div>
+          <div class="cal-row"><div class="cal-day">21</div><div class="cal-day">22</div><div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div><div class="cal-day cal-off">26</div><div class="cal-day cal-off">27</div></div>
+          <div class="cal-row"><div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day">30</div><div class="cal-day">31</div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div></div>
+        </div>
+        <div class="slots-wrap">
+          <p class="label">Horários disponíveis</p>
+          <div class="slots"><div class="slot">11:00</div><div class="slot">12:00</div><div class="slot">14:00</div><div class="slot slot-on">15:00</div></div>
+          <div class="slots"><div class="slot">16:00</div><div class="slot">17:00</div><div class="slot">18:00</div><div class="slot">19:00</div></div>
+        </div>
+      </div>
+      <div class="btn">Continuar</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Primeira tela do agendamento. Mostra os dias e os horários disponíveis.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Escolher o dia</li>
+        <li>Escolher o horário</li>
+        <li>Continuar: vai para AGE-02</li>
+        <li>Voltar: vai para a tela anterior</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="AGE-02">
+    <p class="step-name"><span class="step-id">AGE-02</span> Confirmar</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><p class="bar-title">Confirmar agendamento</p></div>
+      <div class="body">
+        <p class="h">Confirme os dados</p>
+        <div class="info-list">
+        <div class="info-row"><p class="t-sm">Procedimento</p><p class="label">Bioestimulador de Colagénio</p></div>
+        <div class="info-row"><p class="t-sm">Profissional</p><p class="label">Dr. Rodrigo Tavares</p></div>
+        <div class="info-row"><p class="t-sm">Data e hora</p><p class="label">02 Dez, 15:00</p></div>
+        <div class="info-row"><p class="t-sm">Local</p><p class="label">Consultório 2</p></div>
+        <div class="info-row"><p class="t-sm">Valor</p><p class="label">00,00 €</p></div>
+        </div>
+        <p class="t-sm">O pagamento é feito fora do app, na página segura da Stripe.</p>
+      </div>
+      <div class="btn">Pagar com Stripe</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Resumo do agendamento antes do pagamento.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Rever os dados</li>
+        <li>Pagar com Stripe: abre AGE-03</li>
+        <li>Voltar: vai para AGE-01</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="AGE-03">
+    <p class="step-name"><span class="step-id">AGE-03</span> Pagamento Stripe</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">×</div><p class="bar-title">Stripe</p></div>
+      <div class="body">
+        <p class="t">Página externa, fora do app</p>
+        <p class="h">00,00 €</p>
+        <div class="field"><p class="label">Número do cartão</p><div class="input"></div></div>
+        <div class="cta-row">
+          <div class="field grow"><p class="label">Validade</p><div class="input"></div></div>
+          <div class="field grow"><p class="label">CVC</p><div class="input"></div></div>
+        </div>
+      </div>
+      <div class="btn">Pagar</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Página de pagamento da Stripe, aberta fora do app.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Preencher os dados do cartão</li>
+        <li>Pagar: volta ao app em AGE-04</li>
+        <li>Fechar: volta para AGE-02</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step" id="AGE-04">
+    <p class="step-name"><span class="step-id">AGE-04</span> Sessão agendada</p>
+    <div class="phone">
+      <div class="body center">
+        <div class="box ok">OK</div>
+        <p class="h text-center">Sessão agendada</p>
+        <p class="t text-center">02 Dez, 15:00</p>
+      </div>
+      <div class="btn">Ver agendamento</div>
+      <div class="link">Voltar à dashboard</div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Confirma que o pagamento e o agendamento foram feitos.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Ver agendamento: vai para DET-01</li>
+        <li>Voltar à dashboard: vai para DAS-01</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<h3 class="flow-sub">Detalhe do agendamento</h3>
+
+<div class="flow">
+
+  <div class="step" id="DET-01">
+    <p class="step-name"><span class="step-id">DET-01</span> Detalhe do agendamento</p>
+    <div class="phone">
+      <div class="bar"><div class="arrow">←</div><p class="bar-title">Agendamento</p></div>
+      <div class="body">
+        <p class="h">Bioestimulador de Colagénio</p>
+        <div class="info-list">
+        <div class="info-row"><p class="t-sm">Data e hora</p><p class="label">02 Dez, 10:00</p></div>
+        <div class="info-row"><p class="t-sm">Médico</p><p class="label">Dr. Rodrigo Tavares</p></div>
+        <div class="info-row"><p class="t-sm">Local</p><p class="label">Consultório 2, Av. Dos Estados Unidos da América, 51A, Alvalade</p></div>
+        </div>
+        <div class="desc">
+          <p class="label">Descrição do procedimento</p>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line line-short"></div>
+        </div>
+      </div>
+      <div class="cta-row">
+        <div class="btn btn-line">Cancelar</div>
+        <div class="btn">Reagendar</div>
+      </div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Abre ao clicar num agendamento. Mostra local, médico, procedimento e descrição.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Reagendar: vai para AGE-01</li>
+        <li>Cancelar (tela ainda não existe)</li>
+        <li>Voltar: vai para DAS-01</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<h3 class="flow-sub">Leitura</h3>
+
+<div class="flow">
+
+  <div class="step" id="LEI-01">
+    <p class="step-name"><span class="step-id">LEI-01</span> Leitura</p>
+    <div class="phone phone-flush">
+      <div class="top-flush">
+      <div class="bar"><div class="arrow">←</div><p class="bar-title">Leituras</p></div>
+      </div>
+      <div class="dash-scroll">
+        <div class="box read-hero">Imagem</div>
+        <div class="section section-last">
+          <p class="t-sm">Cuidados</p>
+          <p class="h">Rotina de skincare pós-procedimento</p>
+          <p class="t-sm">3 min de leitura</p>
+          <div class="desc">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line line-short"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line line-short"></div>
+          </div>
+          <div class="box read-inline">Imagem</div>
+          <div class="desc">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line line-short"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line line-short"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <p class="note-title">O que é</p>
+      <p class="note-text">Abre ao clicar numa leitura. Artigo estilo blog, com scroll por dentro.</p>
+      <p class="note-title">O que o utilizador pode fazer</p>
+      <ul class="note-list">
+        <li>Ler o artigo</li>
+        <li>Voltar: vai para DAS-01</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
