@@ -351,6 +351,24 @@
   .mail p { padding: 0 14px; }
   .painel .form { gap: 12px; }
   .dr-body .label { margin-top: 2px; }
+
+  /* Pacotes */
+  .pk-row { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border: 1px solid #E8E8E8; border-radius: 12px; }
+  .pk-row .lucide { width: 16px; height: 16px; color: #6B6B6B; }
+  .qtd { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+  .th-g { width: 64px; height: 64px; border-radius: 12px; object-fit: cover; }
+  td .lucide-star { color: #7D6219; fill: #C9A546; }
+  .col-m .total { margin-bottom: 4px; }
+
+  /* Novidades */
+  .editor { display: flex; flex-direction: column; overflow: hidden; border: 1px solid #E8E8E8; border-radius: 12px; }
+  .ed-bar { display: flex; gap: 16px; padding: 10px 14px; border-bottom: 1px solid #E8E8E8; background: #FAFAFA; color: #6B6B6B; }
+  .ed-bar .lucide { width: 18px; height: 18px; }
+  .ed-txt { min-height: 300px; padding: 14px; font-size: 15px; line-height: 24px; color: #6B6B6B; }
+  .prev-c { display: flex; align-items: center; justify-content: center; padding: 20px; background: #EDEDED; }
+  .art-prev { overflow: hidden; width: 300px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 4px 16px rgba(0, 0, 0, .10); }
+  .art-prev img { display: block; width: 100%; height: 170px; object-fit: cover; }
+  .art-b { display: flex; flex-direction: column; gap: 8px; padding: 16px; }
 </style>
 </head>
 <body class="sem-mockup">
@@ -457,6 +475,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -578,6 +598,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -618,6 +640,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -663,6 +687,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -708,6 +734,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -753,6 +781,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -827,6 +857,8 @@
 <div class="nav-item nav-on"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -886,6 +918,8 @@
 <div class="nav-item nav-on"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -922,6 +956,8 @@
 <div class="nav-item nav-on"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -980,6 +1016,8 @@
 <div class="nav-item nav-on"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1016,6 +1054,8 @@
 <div class="nav-item nav-on"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1083,6 +1123,8 @@
 <div class="nav-item nav-on"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1150,6 +1192,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item nav-on"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1186,6 +1230,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item nav-on"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1225,6 +1271,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item nav-on"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1279,6 +1327,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item nav-on"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1318,6 +1368,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item nav-on"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1382,6 +1434,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item nav-on"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1446,6 +1500,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item nav-on"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1505,6 +1561,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item nav-on"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1564,6 +1622,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item nav-on"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1600,6 +1660,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item nav-on"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1628,6 +1690,446 @@
   </div>
 </div>
 </div>
+<h2 class="flow-title">Pacotes</h2>
+<div class="flow">
+<div class="step web" id="PCT-01">
+  <p class="step-name"><span class="step-id">PCT-01</span> Pacotes</p>
+  <div class="laptop"><img class="laptop-frame" src="laptop.svg" alt="" loading="lazy"><div class="browser">
+  <div class="browser-bar"><span></span><span></span><span></span><div class="url">painel.hdclinicpt.com</div></div>
+  <div class="app">
+<div class="side">
+  <div class="side-logo"><img src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic"></div>
+  <div class="side-body">
+    <div class="search"><i data-lucide="search"></i><span>Procurar...</span></div>
+    <p class="side-label">Gestão</p>
+    <div class="nav-item"><i data-lucide="layout-dashboard"></i><span class="grow">Dashboard</span></div>
+<div class="nav-item"><i data-lucide="calendar-days"></i><span class="grow">Agenda</span><span class="badge">8</span></div>
+<div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
+<div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
+<div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item nav-on"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
+<div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
+<div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
+
+  </div>
+  <div class="side-user"><img src="img-modelos/avatar.jpg" alt=""><div><p class="u-name">Dra. Helena Duarte</p><p class="u-role">Administração</p></div></div>
+</div>
+    <div class="main">
+      <div class="top"><div class="grow"><p class="top-title">Pacotes promocionais</p><p class="top-sub">Mostrados na home do app</p></div><div class="btn"><i data-lucide="plus"></i>Novo pacote</div></div>
+      <div class="content">
+<div class="card table"><table><thead><tr><th>Pacote</th><th>Inclui</th><th>Valor</th><th>Válido até</th><th>Destaque</th><th>Estado</th><th></th></tr></thead><tbody><tr><td><div class="who"><img class="th" src="img-modelos/pacote-rejuvenescedor.jpg" alt="">Pacote Rejuvenescedor</div></td><td>3 procedimentos</td><td>000,00 €</td><td>30 Nov</td><td><i data-lucide="star"></i></td><td><span class="chip chip-ok">Ativo</span></td><td class="acoes"><i data-lucide="eye"></i><i data-lucide="pencil"></i><i data-lucide="power"></i></td></tr><tr><td><div class="who"><img class="th" src="img-modelos/skinbooster.jpg" alt="">Pacote Pele Radiante</div></td><td>2 procedimentos</td><td>000,00 €</td><td>15 Dez</td><td></td><td><span class="chip chip-ok">Ativo</span></td><td class="acoes"><i data-lucide="eye"></i><i data-lucide="pencil"></i><i data-lucide="power"></i></td></tr><tr><td><div class="who"><img class="th" src="img-modelos/harmonizacao-facial.jpg" alt="">Pacote Harmonia Facial</div></td><td>4 procedimentos</td><td>000,00 €</td><td>31 Out</td><td></td><td><span class="chip chip-off">Inativo</span></td><td class="acoes"><i data-lucide="eye"></i><i data-lucide="pencil"></i><i data-lucide="power"></i></td></tr></tbody></table></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+  <div class="note">
+    <p class="note-title">O que é</p>
+    <p class="note-text">Lista dos pacotes, com procedimentos, valor, validade, destaque e estado. Alimenta DAS-01 e PAC-01 do app.</p>
+    <p class="note-title">O que o utilizador pode fazer</p>
+    <ul class="note-list"><li>Novo pacote: vai para PCT-02</li><li>Ver: vai para PCT-03</li><li>Editar: vai para PCT-04</li><li>Desativar: vai para PCT-05</li></ul>
+  </div>
+</div>
+<div class="step web" id="PCT-02">
+  <p class="step-name"><span class="step-id">PCT-02</span> Novo pacote</p>
+  <div class="laptop"><img class="laptop-frame" src="laptop.svg" alt="" loading="lazy"><div class="browser">
+  <div class="browser-bar"><span></span><span></span><span></span><div class="url">painel.hdclinicpt.com</div></div>
+  <div class="app">
+<div class="side">
+  <div class="side-logo"><img src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic"></div>
+  <div class="side-body">
+    <div class="search"><i data-lucide="search"></i><span>Procurar...</span></div>
+    <p class="side-label">Gestão</p>
+    <div class="nav-item"><i data-lucide="layout-dashboard"></i><span class="grow">Dashboard</span></div>
+<div class="nav-item"><i data-lucide="calendar-days"></i><span class="grow">Agenda</span><span class="badge">8</span></div>
+<div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
+<div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
+<div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item nav-on"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
+<div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
+<div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
+
+  </div>
+  <div class="side-user"><img src="img-modelos/avatar.jpg" alt=""><div><p class="u-name">Dra. Helena Duarte</p><p class="u-role">Administração</p></div></div>
+</div>
+    <div class="main">
+      <div class="top"><div class="grow"><p class="top-title">Novo pacote</p><p class="top-sub">Junte procedimentos numa condição promocional</p></div><div class="form-actions"><div class="btn btn-line">Cancelar</div><div class="btn">Guardar</div></div></div>
+      <div class="content">
+<div class="cols"><div class="card col-a form"><div class="field "><p class="label">Nome</p><div class="input">Ex.: Pacote Rejuvenescedor</div></div><div class="field"><p class="label">Descrição</p><div class="input input-area">Texto mostrado no app</div></div><div class="field"><p class="label">Procedimentos incluídos</p><p class="r-s">Nenhum procedimento adicionado.</p></div><div class="field"><p class="label">Adicionar procedimento</p><div class="input"><span class="grow">Escolher procedimento</span><i data-lucide="chevron-down"></i></div></div><div class="two"><div class="field "><p class="label">Valor promocional</p><div class="input">000,00 €</div></div><div class="field"><p class="label">Início</p><div class="input"><span class="grow">DD/MM/AAAA</span><i data-lucide="chevron-down"></i></div></div><div class="field"><p class="label">Fim</p><div class="input"><span class="grow">DD/MM/AAAA</span><i data-lucide="chevron-down"></i></div></div></div></div><div class="card col-b form"><div class="field"><p class="label">Foto</p><div class="drop"><i data-lucide="image"></i><span>Carregar imagem</span></div></div><div class="total"><i data-lucide="tag"></i><div class="grow"><p class="r-s">Valor normal: 000,00 €</p><p class="total-v">000,00 €</p><p class="r-s">Desconto de 0%</p></div></div><div class="sw-row"><div class="grow"><p class="label">Destaque na home</p><p class="r-s">Aparece no carrossel do app</p></div><div class="switch switch-s"></div></div><div class="sw-row"><div class="grow"><p class="label">Mostrar no app</p></div><div class="switch switch-s"></div></div></div></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+  <div class="note">
+    <p class="note-title">O que é</p>
+    <p class="note-text">Junta procedimentos do catálogo, com valor promocional e validade. O valor normal e o desconto são calculados.</p>
+    <p class="note-title">O que o utilizador pode fazer</p>
+    <ul class="note-list"><li>Preencher nome e descrição</li><li>Adicionar procedimentos e quantidades</li><li>Definir valor e validade</li><li>Carregar a foto</li><li>Ligar destaque na home</li><li>Guardar: vai para PCT-03</li><li>Cancelar: volta para PCT-01</li></ul>
+  </div>
+</div>
+<div class="step web" id="PCT-03">
+  <p class="step-name"><span class="step-id">PCT-03</span> Ver pacote</p>
+  <div class="laptop"><img class="laptop-frame" src="laptop.svg" alt="" loading="lazy"><div class="browser">
+  <div class="browser-bar"><span></span><span></span><span></span><div class="url">painel.hdclinicpt.com</div></div>
+  <div class="app">
+<div class="side">
+  <div class="side-logo"><img src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic"></div>
+  <div class="side-body">
+    <div class="search"><i data-lucide="search"></i><span>Procurar...</span></div>
+    <p class="side-label">Gestão</p>
+    <div class="nav-item"><i data-lucide="layout-dashboard"></i><span class="grow">Dashboard</span></div>
+<div class="nav-item"><i data-lucide="calendar-days"></i><span class="grow">Agenda</span><span class="badge">8</span></div>
+<div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
+<div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
+<div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item nav-on"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
+<div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
+<div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
+
+  </div>
+  <div class="side-user"><img src="img-modelos/avatar.jpg" alt=""><div><p class="u-name">Dra. Helena Duarte</p><p class="u-role">Administração</p></div></div>
+</div>
+    <div class="main">
+      <div class="top"><div class="grow"><p class="top-title">Pacote</p><p class="top-sub">Informações completas</p></div><div class="btn btn-line"><i data-lucide="power"></i>Desativar</div><div class="btn btn-line"><i data-lucide="copy"></i>Duplicar</div><div class="btn"><i data-lucide="pencil"></i>Editar</div></div>
+      <div class="content">
+<div class="card ficha">
+  <img class="th-g" src="img-modelos/pacote-rejuvenescedor.jpg" alt="">
+  <div class="grow"><p class="top-title">Pacote Rejuvenescedor</p><p class="r-s">3 procedimentos para tratamento de pele</p></div>
+  <div class="f-num"><b>18</b><span>Vendidos</span></div>
+  <div class="f-num"><b>30 Nov</b><span>Válido até</span></div>
+  <span class="chip chip-ok">Ativo</span>
+</div>
+<div class="cols">
+  <div class="card col-m form-s"><p class="c-title">Procedimentos incluídos</p><div class="cons"><i data-lucide="circle-check"></i><span>Toxina Botulínica</span></div><div class="cons"><i data-lucide="circle-check"></i><span>Skinbooster</span></div><div class="cons"><i data-lucide="circle-check"></i><span>Laser CO2</span></div>
+    <p class="c-title">Validade</p><div class="pares"><div class="par"><p class="r-s">Início</p><p class="r-t">01/11/2026</p></div><div class="par"><p class="r-s">Fim</p><p class="r-t">30/11/2026</p></div></div>
+  </div>
+  <div class="card col-m form-s"><p class="c-title">Valores</p><div class="total"><i data-lucide="tag"></i><div class="grow"><p class="r-s">Valor normal: 000,00 €</p><p class="total-v">000,00 €</p><p class="r-s">Desconto de 20%</p></div></div>
+    <p class="c-title">No app</p><div class="sw-row"><div class="grow"><p class="label">Destaque na home</p></div><div class="switch switch-s"></div></div><div class="sw-row"><div class="grow"><p class="label">Mostrar no app</p></div><div class="switch switch-s"></div></div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div></div>
+  <div class="note">
+    <p class="note-title">O que é</p>
+    <p class="note-text">Mostra procedimentos, validade, valores, vendas e como aparece no app.</p>
+    <p class="note-title">O que o utilizador pode fazer</p>
+    <ul class="note-list"><li>Editar: vai para PCT-04</li><li>Duplicar: vai para PCT-02 com os dados preenchidos</li><li>Desativar: vai para PCT-05</li></ul>
+  </div>
+</div>
+<div class="step web" id="PCT-04">
+  <p class="step-name"><span class="step-id">PCT-04</span> Editar pacote</p>
+  <div class="laptop"><img class="laptop-frame" src="laptop.svg" alt="" loading="lazy"><div class="browser">
+  <div class="browser-bar"><span></span><span></span><span></span><div class="url">painel.hdclinicpt.com</div></div>
+  <div class="app">
+<div class="side">
+  <div class="side-logo"><img src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic"></div>
+  <div class="side-body">
+    <div class="search"><i data-lucide="search"></i><span>Procurar...</span></div>
+    <p class="side-label">Gestão</p>
+    <div class="nav-item"><i data-lucide="layout-dashboard"></i><span class="grow">Dashboard</span></div>
+<div class="nav-item"><i data-lucide="calendar-days"></i><span class="grow">Agenda</span><span class="badge">8</span></div>
+<div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
+<div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
+<div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item nav-on"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
+<div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
+<div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
+
+  </div>
+  <div class="side-user"><img src="img-modelos/avatar.jpg" alt=""><div><p class="u-name">Dra. Helena Duarte</p><p class="u-role">Administração</p></div></div>
+</div>
+    <div class="main">
+      <div class="top"><div class="grow"><p class="top-title">Editar pacote</p><p class="top-sub">Pacote Rejuvenescedor</p></div><div class="form-actions"><div class="btn btn-line">Descartar</div><div class="btn">Guardar alterações</div></div></div>
+      <div class="content">
+<div class="cols"><div class="card col-a form"><div class="field"><p class="label">Nome</p><div class="input input-v">Pacote Rejuvenescedor</div></div><div class="field"><p class="label">Descrição</p><div class="input input-area">3 procedimentos para tratamento de pele</div></div><div class="field"><p class="label">Procedimentos incluídos</p><div class="pk-row"><p class="r-t grow">Toxina Botulínica</p><div class="qtd"><i data-lucide="minus"></i><b>1</b><i data-lucide="plus"></i></div><i data-lucide="x"></i></div><div class="pk-row"><p class="r-t grow">Skinbooster</p><div class="qtd"><i data-lucide="minus"></i><b>1</b><i data-lucide="plus"></i></div><i data-lucide="x"></i></div><div class="pk-row"><p class="r-t grow">Laser CO2</p><div class="qtd"><i data-lucide="minus"></i><b>1</b><i data-lucide="plus"></i></div><i data-lucide="x"></i></div></div><div class="field"><p class="label">Adicionar procedimento</p><div class="input"><span class="grow">Escolher procedimento</span><i data-lucide="chevron-down"></i></div></div><div class="two"><div class="field"><p class="label">Valor promocional</p><div class="input input-v">000,00 €</div></div><div class="field"><p class="label">Início</p><div class="input input-v"><span class="grow">01/11/2026</span><i data-lucide="chevron-down"></i></div></div><div class="field"><p class="label">Fim</p><div class="input input-v"><span class="grow">30/11/2026</span><i data-lucide="chevron-down"></i></div></div></div></div><div class="card col-b form"><div class="field"><p class="label">Foto</p><img class="foto-ok" src="img-modelos/pacote-rejuvenescedor.jpg" alt=""><p class="link-c">Trocar imagem</p></div><div class="total"><i data-lucide="tag"></i><div class="grow"><p class="r-s">Valor normal: 000,00 €</p><p class="total-v">000,00 €</p><p class="r-s">Desconto de 20%</p></div></div><div class="sw-row"><div class="grow"><p class="label">Destaque na home</p><p class="r-s">Aparece no carrossel do app</p></div><div class="switch switch-s"></div></div><div class="sw-row"><div class="grow"><p class="label">Mostrar no app</p></div><div class="switch switch-s"></div></div></div></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+  <div class="note">
+    <p class="note-title">O que é</p>
+    <p class="note-text">Mesmo formulário, preenchido. Alterações não afetam quem já comprou.</p>
+    <p class="note-title">O que o utilizador pode fazer</p>
+    <ul class="note-list"><li>Alterar os dados</li><li>Guardar alterações: volta para PCT-03</li><li>Descartar: volta para PCT-03</li></ul>
+  </div>
+</div>
+<div class="step web" id="PCT-05">
+  <p class="step-name"><span class="step-id">PCT-05</span> Desativar pacote</p>
+  <div class="laptop"><img class="laptop-frame" src="laptop.svg" alt="" loading="lazy"><div class="browser">
+  <div class="browser-bar"><span></span><span></span><span></span><div class="url">painel.hdclinicpt.com</div></div>
+  <div class="app">
+<div class="side">
+  <div class="side-logo"><img src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic"></div>
+  <div class="side-body">
+    <div class="search"><i data-lucide="search"></i><span>Procurar...</span></div>
+    <p class="side-label">Gestão</p>
+    <div class="nav-item"><i data-lucide="layout-dashboard"></i><span class="grow">Dashboard</span></div>
+<div class="nav-item"><i data-lucide="calendar-days"></i><span class="grow">Agenda</span><span class="badge">8</span></div>
+<div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
+<div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
+<div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item nav-on"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
+<div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
+<div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
+
+  </div>
+  <div class="side-user"><img src="img-modelos/avatar.jpg" alt=""><div><p class="u-name">Dra. Helena Duarte</p><p class="u-role">Administração</p></div></div>
+</div>
+    <div class="main">
+      <div class="top"><div class="grow"><p class="top-title">Pacote</p><p class="top-sub">Informações completas</p></div><div class="btn btn-line"><i data-lucide="power"></i>Desativar</div><div class="btn btn-line"><i data-lucide="copy"></i>Duplicar</div><div class="btn"><i data-lucide="pencil"></i>Editar</div></div>
+      <div class="content">
+<div class="card ficha">
+  <img class="th-g" src="img-modelos/pacote-rejuvenescedor.jpg" alt="">
+  <div class="grow"><p class="top-title">Pacote Rejuvenescedor</p><p class="r-s">3 procedimentos para tratamento de pele</p></div>
+  <div class="f-num"><b>18</b><span>Vendidos</span></div>
+  <div class="f-num"><b>30 Nov</b><span>Válido até</span></div>
+  <span class="chip chip-ok">Ativo</span>
+</div>
+<div class="cols">
+  <div class="card col-m form-s"><p class="c-title">Procedimentos incluídos</p><div class="cons"><i data-lucide="circle-check"></i><span>Toxina Botulínica</span></div><div class="cons"><i data-lucide="circle-check"></i><span>Skinbooster</span></div><div class="cons"><i data-lucide="circle-check"></i><span>Laser CO2</span></div>
+    <p class="c-title">Validade</p><div class="pares"><div class="par"><p class="r-s">Início</p><p class="r-t">01/11/2026</p></div><div class="par"><p class="r-s">Fim</p><p class="r-t">30/11/2026</p></div></div>
+  </div>
+  <div class="card col-m form-s"><p class="c-title">Valores</p><div class="total"><i data-lucide="tag"></i><div class="grow"><p class="r-s">Valor normal: 000,00 €</p><p class="total-v">000,00 €</p><p class="r-s">Desconto de 20%</p></div></div>
+    <p class="c-title">No app</p><div class="sw-row"><div class="grow"><p class="label">Destaque na home</p></div><div class="switch switch-s"></div></div><div class="sw-row"><div class="grow"><p class="label">Mostrar no app</p></div><div class="switch switch-s"></div></div>
+  </div>
+</div>
+      </div>
+    </div>
+<div class="overlay overlay-center"><div class="modal">
+  <div class="modal-ic"><i data-lucide="power"></i></div>
+  <p class="top-title">Desativar pacote?</p>
+  <p class="r-s">Pacote Rejuvenescedor sai do app e não pode ser comprado. Quem já comprou mantém as sessões.</p>
+  <div class="dr-foot dr-foot-m"><div class="btn btn-line grow">Manter ativo</div><div class="btn btn-danger-s grow">Desativar</div></div>
+</div></div>
+  </div>
+</div></div>
+  <div class="note">
+    <p class="note-title">O que é</p>
+    <p class="note-text">Confirmação antes de tirar o pacote do app. Quem já comprou mantém as sessões.</p>
+    <p class="note-title">O que o utilizador pode fazer</p>
+    <ul class="note-list"><li>Desativar: volta para PCT-01</li><li>Manter ativo: volta para PCT-03</li></ul>
+  </div>
+</div>
+</div>
+<h2 class="flow-title">Novidades</h2>
+<div class="flow">
+<div class="step web" id="ART-01">
+  <p class="step-name"><span class="step-id">ART-01</span> Novidades</p>
+  <div class="laptop"><img class="laptop-frame" src="laptop.svg" alt="" loading="lazy"><div class="browser">
+  <div class="browser-bar"><span></span><span></span><span></span><div class="url">painel.hdclinicpt.com</div></div>
+  <div class="app">
+<div class="side">
+  <div class="side-logo"><img src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic"></div>
+  <div class="side-body">
+    <div class="search"><i data-lucide="search"></i><span>Procurar...</span></div>
+    <p class="side-label">Gestão</p>
+    <div class="nav-item"><i data-lucide="layout-dashboard"></i><span class="grow">Dashboard</span></div>
+<div class="nav-item"><i data-lucide="calendar-days"></i><span class="grow">Agenda</span><span class="badge">8</span></div>
+<div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
+<div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
+<div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item nav-on"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
+<div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
+<div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
+
+  </div>
+  <div class="side-user"><img src="img-modelos/avatar.jpg" alt=""><div><p class="u-name">Dra. Helena Duarte</p><p class="u-role">Administração</p></div></div>
+</div>
+    <div class="main">
+      <div class="top"><div class="grow"><p class="top-title">Novidades</p><p class="top-sub">Leituras mostradas no app</p></div><div class="btn"><i data-lucide="plus"></i>Nova leitura</div></div>
+      <div class="content">
+<div class="cal-seg seg-w"><span class="seg-on">Todas</span><span>Publicadas</span><span>Programadas</span><span>Rascunhos</span><span>Arquivadas</span></div><div class="card table"><table><thead><tr><th>Título</th><th>Categoria</th><th>Leitura</th><th>Publicação</th><th>Destaque</th><th>Estado</th><th></th></tr></thead><tbody><tr><td><div class="who"><img class="th" src="img-modelos/leitura-skincare.jpg" alt="">Rotina de skincare pós-procedimento</div></td><td>Cuidados</td><td>3 min</td><td>2 Nov</td><td><i data-lucide="star"></i></td><td><span class="chip chip-ok">Publicado</span></td><td class="acoes"><i data-lucide="eye"></i><i data-lucide="pencil"></i><i data-lucide="archive"></i></td></tr><tr><td><div class="who"><img class="th" src="img-modelos/leitura-produtos.jpg" alt="">Como escolher um sérum</div></td><td>Cuidados</td><td>4 min</td><td>28 Out</td><td></td><td><span class="chip chip-ok">Publicado</span></td><td class="acoes"><i data-lucide="eye"></i><i data-lucide="pencil"></i><i data-lucide="archive"></i></td></tr><tr><td><div class="who"><img class="th" src="img-modelos/boas-vindas.jpg" alt="">Cuidados de inverno com a pele</div></td><td>Dicas</td><td>2 min</td><td>20 Nov</td><td></td><td><span class="chip chip-warn">Programado</span></td><td class="acoes"><i data-lucide="eye"></i><i data-lucide="pencil"></i><i data-lucide="archive"></i></td></tr><tr><td><div class="who"><img class="th" src="img-modelos/harmonizacao-facial.jpg" alt="">O que é harmonização facial</div></td><td>Procedimentos</td><td>5 min</td><td>Sem data</td><td></td><td><span class="chip chip-off">Rascunho</span></td><td class="acoes"><i data-lucide="eye"></i><i data-lucide="pencil"></i><i data-lucide="trash-2"></i></td></tr></tbody></table></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+  <div class="note">
+    <p class="note-title">O que é</p>
+    <p class="note-text">Lista das leituras, com filtro por estado. Alimenta NOV-01, LEI-01 e Leituras para si, em DAS-01.</p>
+    <p class="note-title">O que o utilizador pode fazer</p>
+    <ul class="note-list"><li>Filtrar por estado</li><li>Nova leitura: vai para ART-02</li><li>Ver: vai para ART-03</li><li>Editar: vai para ART-04</li><li>Arquivar: vai para ART-05</li><li>Apagar um rascunho</li></ul>
+  </div>
+</div>
+<div class="step web" id="ART-02">
+  <p class="step-name"><span class="step-id">ART-02</span> Nova leitura</p>
+  <div class="laptop"><img class="laptop-frame" src="laptop.svg" alt="" loading="lazy"><div class="browser">
+  <div class="browser-bar"><span></span><span></span><span></span><div class="url">painel.hdclinicpt.com</div></div>
+  <div class="app">
+<div class="side">
+  <div class="side-logo"><img src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic"></div>
+  <div class="side-body">
+    <div class="search"><i data-lucide="search"></i><span>Procurar...</span></div>
+    <p class="side-label">Gestão</p>
+    <div class="nav-item"><i data-lucide="layout-dashboard"></i><span class="grow">Dashboard</span></div>
+<div class="nav-item"><i data-lucide="calendar-days"></i><span class="grow">Agenda</span><span class="badge">8</span></div>
+<div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
+<div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
+<div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item nav-on"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
+<div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
+<div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
+
+  </div>
+  <div class="side-user"><img src="img-modelos/avatar.jpg" alt=""><div><p class="u-name">Dra. Helena Duarte</p><p class="u-role">Administração</p></div></div>
+</div>
+    <div class="main">
+      <div class="top"><div class="grow"><p class="top-title">Nova leitura</p><p class="top-sub">Artigo mostrado em Novidades, no app</p></div><div class="form-actions"><div class="btn btn-line">Guardar rascunho</div><div class="btn">Publicar</div></div></div>
+      <div class="content">
+<div class="cols"><div class="card col-a form"><div class="field "><p class="label">Título</p><div class="input">Ex.: Rotina de skincare pós-procedimento</div></div><div class="two"><div class="field"><p class="label">Categoria</p><div class="input"><span class="grow">Escolher categoria</span><i data-lucide="chevron-down"></i></div></div><div class="field "><p class="label">Resumo</p><div class="input">Frase curta para o card</div></div></div><div class="field"><p class="label">Conteúdo</p><div class="editor"><div class="ed-bar"><i data-lucide="bold"></i><i data-lucide="italic"></i><i data-lucide="heading-2"></i><i data-lucide="list"></i><i data-lucide="link"></i><i data-lucide="image"></i></div><div class="ed-txt">Escreva o artigo</div></div></div></div><div class="card col-b form"><div class="field"><p class="label">Imagem de capa</p><div class="drop"><i data-lucide="image"></i><span>Carregar imagem</span></div></div><p class="c-title">Publicação</p><div class="field"><p class="label">Publicar</p><div class="input"><span class="grow">Agora</span><i data-lucide="chevron-down"></i></div></div><div class="sw-row"><div class="grow"><p class="label">Destaque</p><p class="r-s">Aparece em Em destaque, no app</p></div><div class="switch switch-s switch-off"></div></div><div class="sw-row"><div class="grow"><p class="label">Mostrar na home</p><p class="r-s">Entra em Leituras para si</p></div><div class="switch switch-s"></div></div><div class="sw-row"><p class="label grow">Tempo de leitura</p><p class="r-s">Calculado</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+  <div class="note">
+    <p class="note-title">O que é</p>
+    <p class="note-text">Editor do artigo, com título, categoria, resumo, conteúdo, capa e publicação. O tempo de leitura é calculado.</p>
+    <p class="note-title">O que o utilizador pode fazer</p>
+    <ul class="note-list"><li>Escrever o artigo</li><li>Carregar a capa</li><li>Publicar agora ou programar</li><li>Ligar destaque e home</li><li>Publicar: vai para ART-03</li><li>Guardar rascunho: volta para ART-01</li></ul>
+  </div>
+</div>
+<div class="step web" id="ART-03">
+  <p class="step-name"><span class="step-id">ART-03</span> Ver leitura</p>
+  <div class="laptop"><img class="laptop-frame" src="laptop.svg" alt="" loading="lazy"><div class="browser">
+  <div class="browser-bar"><span></span><span></span><span></span><div class="url">painel.hdclinicpt.com</div></div>
+  <div class="app">
+<div class="side">
+  <div class="side-logo"><img src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic"></div>
+  <div class="side-body">
+    <div class="search"><i data-lucide="search"></i><span>Procurar...</span></div>
+    <p class="side-label">Gestão</p>
+    <div class="nav-item"><i data-lucide="layout-dashboard"></i><span class="grow">Dashboard</span></div>
+<div class="nav-item"><i data-lucide="calendar-days"></i><span class="grow">Agenda</span><span class="badge">8</span></div>
+<div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
+<div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
+<div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item nav-on"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
+<div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
+<div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
+
+  </div>
+  <div class="side-user"><img src="img-modelos/avatar.jpg" alt=""><div><p class="u-name">Dra. Helena Duarte</p><p class="u-role">Administração</p></div></div>
+</div>
+    <div class="main">
+      <div class="top"><div class="grow"><p class="top-title">Leitura</p><p class="top-sub">Como aparece no app</p></div><div class="btn btn-line"><i data-lucide="archive"></i>Arquivar</div><div class="btn"><i data-lucide="pencil"></i>Editar</div></div>
+      <div class="content">
+<div class="cols">
+  <div class="card col-m form-s"><div class="dr-top"><p class="top-title">Rotina de skincare pós-procedimento</p><span class="chip chip-ok">Publicado</span></div>
+    <div class="pares"><div class="par"><p class="r-s">Categoria</p><p class="r-t">Cuidados</p></div><div class="par"><p class="r-s">Publicação</p><p class="r-t">2 Nov 2026</p></div><div class="par"><p class="r-s">Autor</p><p class="r-t">Dra. Helena Duarte</p></div><div class="par"><p class="r-s">Tempo de leitura</p><p class="r-t">3 min</p></div></div>
+    <p class="c-title">Desempenho</p><div class="kpis"><div class="card res"><p class="kpi-val">512</p><p class="kpi-lab">Leituras</p></div><div class="card res"><p class="kpi-val">68%</p><p class="kpi-lab">Até ao fim</p></div></div>
+    <p class="c-title">No app</p><div class="sw-row"><div class="grow"><p class="label">Destaque</p></div><div class="switch switch-s"></div></div><div class="sw-row"><div class="grow"><p class="label">Mostrar na home</p></div><div class="switch switch-s"></div></div>
+  </div>
+  <div class="card col-m prev-c"><div class="art-prev"><img src="img-modelos/leitura-skincare.jpg" alt=""><div class="art-b"><p class="r-s">Cuidados</p><p class="c-title">Rotina de skincare pós-procedimento</p><p class="r-s">3 min de leitura</p><div class="line"></div><div class="line"></div><div class="line"></div><div class="line line-short"></div></div></div></div>
+</div>
+      </div>
+    </div>
+  </div>
+</div></div>
+  <div class="note">
+    <p class="note-title">O que é</p>
+    <p class="note-text">Mostra dados, desempenho e pré-visualização de como aparece no app.</p>
+    <p class="note-title">O que o utilizador pode fazer</p>
+    <ul class="note-list"><li>Editar: vai para ART-04</li><li>Arquivar: vai para ART-05</li><li>Ver leituras e conclusão</li></ul>
+  </div>
+</div>
+<div class="step web" id="ART-04">
+  <p class="step-name"><span class="step-id">ART-04</span> Editar leitura</p>
+  <div class="laptop"><img class="laptop-frame" src="laptop.svg" alt="" loading="lazy"><div class="browser">
+  <div class="browser-bar"><span></span><span></span><span></span><div class="url">painel.hdclinicpt.com</div></div>
+  <div class="app">
+<div class="side">
+  <div class="side-logo"><img src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic"></div>
+  <div class="side-body">
+    <div class="search"><i data-lucide="search"></i><span>Procurar...</span></div>
+    <p class="side-label">Gestão</p>
+    <div class="nav-item"><i data-lucide="layout-dashboard"></i><span class="grow">Dashboard</span></div>
+<div class="nav-item"><i data-lucide="calendar-days"></i><span class="grow">Agenda</span><span class="badge">8</span></div>
+<div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
+<div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
+<div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item nav-on"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
+<div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
+<div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
+
+  </div>
+  <div class="side-user"><img src="img-modelos/avatar.jpg" alt=""><div><p class="u-name">Dra. Helena Duarte</p><p class="u-role">Administração</p></div></div>
+</div>
+    <div class="main">
+      <div class="top"><div class="grow"><p class="top-title">Editar leitura</p><p class="top-sub">Rotina de skincare pós-procedimento</p></div><div class="form-actions"><div class="btn btn-line">Descartar</div><div class="btn">Guardar alterações</div></div></div>
+      <div class="content">
+<div class="cols"><div class="card col-a form"><div class="field"><p class="label">Título</p><div class="input input-v">Rotina de skincare pós-procedimento</div></div><div class="two"><div class="field"><p class="label">Categoria</p><div class="input input-v"><span class="grow">Cuidados</span><i data-lucide="chevron-down"></i></div></div><div class="field"><p class="label">Resumo</p><div class="input input-v">Como cuidar da pele nos primeiros dias</div></div></div><div class="field"><p class="label">Conteúdo</p><div class="editor"><div class="ed-bar"><i data-lucide="bold"></i><i data-lucide="italic"></i><i data-lucide="heading-2"></i><i data-lucide="list"></i><i data-lucide="link"></i><i data-lucide="image"></i></div><div class="ed-txt">Nos primeiros dias depois do procedimento, a pele precisa de cuidados simples...</div></div></div></div><div class="card col-b form"><div class="field"><p class="label">Imagem de capa</p><img class="foto-ok" src="img-modelos/leitura-skincare.jpg" alt=""><p class="link-c">Trocar imagem</p></div><p class="c-title">Publicação</p><div class="field"><p class="label">Publicar</p><div class="input input-v"><span class="grow">Publicado em 02/11/2026</span><i data-lucide="chevron-down"></i></div></div><div class="sw-row"><div class="grow"><p class="label">Destaque</p><p class="r-s">Aparece em Em destaque, no app</p></div><div class="switch switch-s"></div></div><div class="sw-row"><div class="grow"><p class="label">Mostrar na home</p><p class="r-s">Entra em Leituras para si</p></div><div class="switch switch-s"></div></div><div class="sw-row"><p class="label grow">Tempo de leitura</p><p class="r-s">3 min</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+  <div class="note">
+    <p class="note-title">O que é</p>
+    <p class="note-text">Mesmo editor, preenchido. Alterações aparecem no app ao guardar.</p>
+    <p class="note-title">O que o utilizador pode fazer</p>
+    <ul class="note-list"><li>Alterar o artigo</li><li>Guardar alterações: volta para ART-03</li><li>Descartar: volta para ART-03</li></ul>
+  </div>
+</div>
+<div class="step web" id="ART-05">
+  <p class="step-name"><span class="step-id">ART-05</span> Arquivar leitura</p>
+  <div class="laptop"><img class="laptop-frame" src="laptop.svg" alt="" loading="lazy"><div class="browser">
+  <div class="browser-bar"><span></span><span></span><span></span><div class="url">painel.hdclinicpt.com</div></div>
+  <div class="app">
+<div class="side">
+  <div class="side-logo"><img src="style-brand/logo/logo-horizontal@2x.png" alt="HD Clinic"></div>
+  <div class="side-body">
+    <div class="search"><i data-lucide="search"></i><span>Procurar...</span></div>
+    <p class="side-label">Gestão</p>
+    <div class="nav-item"><i data-lucide="layout-dashboard"></i><span class="grow">Dashboard</span></div>
+<div class="nav-item"><i data-lucide="calendar-days"></i><span class="grow">Agenda</span><span class="badge">8</span></div>
+<div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
+<div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
+<div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item nav-on"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
+<div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
+<div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
+
+  </div>
+  <div class="side-user"><img src="img-modelos/avatar.jpg" alt=""><div><p class="u-name">Dra. Helena Duarte</p><p class="u-role">Administração</p></div></div>
+</div>
+    <div class="main">
+      <div class="top"><div class="grow"><p class="top-title">Leitura</p><p class="top-sub">Como aparece no app</p></div><div class="btn btn-line"><i data-lucide="archive"></i>Arquivar</div><div class="btn"><i data-lucide="pencil"></i>Editar</div></div>
+      <div class="content">
+<div class="cols">
+  <div class="card col-m form-s"><div class="dr-top"><p class="top-title">Rotina de skincare pós-procedimento</p><span class="chip chip-ok">Publicado</span></div>
+    <div class="pares"><div class="par"><p class="r-s">Categoria</p><p class="r-t">Cuidados</p></div><div class="par"><p class="r-s">Publicação</p><p class="r-t">2 Nov 2026</p></div><div class="par"><p class="r-s">Autor</p><p class="r-t">Dra. Helena Duarte</p></div><div class="par"><p class="r-s">Tempo de leitura</p><p class="r-t">3 min</p></div></div>
+    <p class="c-title">Desempenho</p><div class="kpis"><div class="card res"><p class="kpi-val">512</p><p class="kpi-lab">Leituras</p></div><div class="card res"><p class="kpi-val">68%</p><p class="kpi-lab">Até ao fim</p></div></div>
+    <p class="c-title">No app</p><div class="sw-row"><div class="grow"><p class="label">Destaque</p></div><div class="switch switch-s"></div></div><div class="sw-row"><div class="grow"><p class="label">Mostrar na home</p></div><div class="switch switch-s"></div></div>
+  </div>
+  <div class="card col-m prev-c"><div class="art-prev"><img src="img-modelos/leitura-skincare.jpg" alt=""><div class="art-b"><p class="r-s">Cuidados</p><p class="c-title">Rotina de skincare pós-procedimento</p><p class="r-s">3 min de leitura</p><div class="line"></div><div class="line"></div><div class="line"></div><div class="line line-short"></div></div></div></div>
+</div>
+      </div>
+    </div>
+<div class="overlay overlay-center"><div class="modal">
+  <div class="modal-ic"><i data-lucide="archive"></i></div>
+  <p class="top-title">Arquivar leitura?</p>
+  <p class="r-s">Rotina de skincare pós-procedimento sai do app. Pode ser publicada de novo depois.</p>
+  <div class="dr-foot dr-foot-m"><div class="btn btn-line grow">Manter publicada</div><div class="btn btn-danger-s grow">Arquivar</div></div>
+</div></div>
+  </div>
+</div></div>
+  <div class="note">
+    <p class="note-title">O que é</p>
+    <p class="note-text">Confirmação antes de tirar a leitura do app. Pode voltar a ser publicada.</p>
+    <p class="note-title">O que o utilizador pode fazer</p>
+    <ul class="note-list"><li>Arquivar: volta para ART-01</li><li>Manter publicada: volta para ART-03</li></ul>
+  </div>
+</div>
+</div>
 <h2 class="flow-title">Notificações</h2>
 <div class="flow">
 <div class="step web" id="NOT-01">
@@ -1645,6 +2147,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item nav-on"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1704,6 +2208,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item nav-on"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1764,6 +2270,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item nav-on"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1801,6 +2309,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item nav-on"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1838,6 +2348,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item nav-on"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1881,6 +2393,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item nav-on"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1922,6 +2436,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -1972,6 +2488,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -2022,6 +2540,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -2074,6 +2594,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -2120,6 +2642,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -2162,6 +2686,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -2209,6 +2735,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -2255,6 +2783,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -2302,6 +2832,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -2351,6 +2883,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -2393,6 +2927,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -2441,6 +2977,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -2486,6 +3024,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
@@ -2532,6 +3072,8 @@
 <div class="nav-item"><i data-lucide="users"></i><span class="grow">Clientes</span></div>
 <div class="nav-item"><i data-lucide="stethoscope"></i><span class="grow">Médicos</span></div>
 <div class="nav-item"><i data-lucide="sparkles"></i><span class="grow">Procedimentos</span></div>
+<div class="nav-item"><i data-lucide="package"></i><span class="grow">Pacotes</span></div>
+<div class="nav-item"><i data-lucide="newspaper"></i><span class="grow">Novidades</span></div>
 <div class="nav-item"><i data-lucide="bell-ring"></i><span class="grow">Notificações</span></div>
 <div class="nav-item nav-on"><i data-lucide="settings"></i><span class="grow">Configurações</span></div>
 
